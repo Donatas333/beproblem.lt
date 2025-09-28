@@ -1,101 +1,135 @@
-<!doctype html>
-<html lang="lt">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>beproblem — Automatizacija verslui (Make.com + AI)</title>
-  <meta name="description" content="Automatizuojame marketingą, pardavimus ir komunikaciją Lietuvoje. Make.com, Google Workspace, Airtable, Notion ir AI — kad verslas veiktų be problemų." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🤖%3C/text%3E%3C/svg%3E" />
-  <style>
-    :root { --bg:#0b0c10; --card:#11131a; --accent:#7c5cff; --text:#e8e8ea; --muted:#a7a7ad; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%,rgba(124,92,255,.15),transparent),var(--bg);color:var(--text);line-height:1.6}
-    a{color:var(--text);text-decoration:none}
-    .wrap{max-width:980px;margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-    .logo b{color:var(--accent)}
-    .chip{border:1px solid #262a3a;border-radius:999px;padding:6px 12px;font-size:12px;color:var(--muted)}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin:40px 0}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid #1f2333;border-radius:16px;padding:22px}
-    h1{font-size:42px;line-height:1.1;margin:0 0 10px}
-    h3{margin-top:0;margin-bottom:10px;}
-    .sub{color:var(--muted);font-size:17px}
-    .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:700;transition:background .2s,color .2s}
-    .btn.primary{background:var(--accent);color:#111;}
-    .btn.primary:hover{background:#9f8dff;}
-    .btn.ghost{border:1px solid #2a2e42;color:var(--text);}
-    .btn.ghost:hover{background:#23263a;}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .badge{display:inline-flex;gap:8px;align-items:center;font-size:12px;color:var(--muted)}
-    .tick{width:18px;height:18px;display:inline-grid;place-items:center;border-radius:999px;border:1px solid #2e3246}
-    .list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-    footer{margin:50px 0 10px;color:#7f8292;font-size:12px;text-align:center}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
-    @media (max-width:600px){
-      .wrap{padding:12px}
-      h1{font-size:28px;}
-      .card{padding:12px;}
-      .hero{margin:20px 0;}
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Business automation made simple – save time, reduce costs, keep clients engaged." />
+  <title>Donatas Automations</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">🤖 <span><b>beproblem</b>.lt</span></div>
-      <span class="chip">Automatizacija • Make.com • AI</span>
-    </header>
-
-    <section class="hero">
-      <div class="card">
-        <h1>Automatizuojame marketingą, pardavimus ir klientų komunikaciją</h1>
-        <p class="sub">Sutaupykite laiką ir pinigus: sukuriame srautus ant jūsų turimų sistemų (Gmail, Calendar, Notion/Airtable, CRM), panaudojame <b>Make.com</b> ir <b>AI</b>, kad pasikartojantys darbai vyktų <i>savaime</i>.</p>
-        <div class="cta">
-          <a class="btn primary" href="mailto:info@beproblem.lt?subject=Užklausa%20dėl%20automatizacijos&body=Sveiki,%20norėčiau%20pasikonsultuoti%20dėl%20automatizacijos.%20">Nemokama konsultacija</a>
-          <a class="btn ghost" href="#paslaugos">Peržiūrėti paslaugas</a>
-        </div>
-        <p class="badge" style="margin-top:14px"><span class="tick">✓</span> Greitas įdiegimas • <span class="tick">✓</span> Aiškūs ROI pavyzdžiai • <span class="tick">✓</span> Be ilgametės sutarties</p>
-      </div>
-      <div class="card">
-        <ul class="list">
-          <li><b>Leads → susitikimai</b>: laiškų/žinučių sekos, priminimai, kalendoriaus rezervacijos (ICS).</li>
-          <li><b>OCR → sąskaitos → duomenys</b>: automatizuotas dokumentų surinkimas ir suvedimas.</li>
-          <li><b>CRM higiena</b>: kontaktų praturtinimas, statusų atnaujinimas, dublikatai out.</li>
-          <li><b>AI žinutės</b>: personalizuoti e‑laiškai/SMS pagal kliento istoriją.</li>
-          <li><b>Ataskaitos</b>: Google Sheets/Notion/Airtable su KPI ir įžvalgomis.</li>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Donatas Automations</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#ai">AI Add-ons</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#cases">Examples</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </div>
-    </section>
+      </nav>
+    </div>
+  </header>
 
-    <section id="paslaugos" class="grid">
-      <div class="card">
-        <h3>Greiti srautai (1–3 d.)</h3>
-        <p>Primintukai, follow‑up, kalendoriaus kvietimai, paprastos integracijos.</p>
-      </div>
-      <div class="card">
-        <h3>AI tekstai & personalizacija</h3>
-        <p>Auto‑žinutės pagal kliento istoriją, kalbos stilius, A/B testai.</p>
-      </div>
-      <div class="card">
-        <h3>Duomenų vamzdynas</h3>
-        <p>El. paštas → ICS → Google Drive/Sheets → Notion/Airtable, ataskaitos.</p>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <h1>Automate Your Business. Save Time. Grow Faster.</h1>
+      <p>We design custom automations on top of the systems you already use. No expensive software, no disruption — just smarter workflows that help your team focus on growth.</p>
+      <a href="#contact" class="btn">Book a Free Consultation</a>
+    </div>
+  </section>
 
-    <section class="card" style="margin-top:22px">
-      <h3>Susisiekti</h3>
-      <p>Parašykite el. paštu: <a href="mailto:info@beproblem.lt">info@beproblem.lt</a>  •  Tel. (pasirinktinai)</p>
-      <p>Adresas: Vilnius, Lietuva</p>
-    </section>
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Simple Automations, Real Impact</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Client Communication</h3>
+          <ul>
+            <li>Appointment reminders</li>
+            <li>Payment alerts</li>
+            <li>Lapsed client follow-ups</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Sales & Marketing</h3>
+          <ul>
+            <li>Lead capture to CRM</li>
+            <li>Email sequences</li>
+            <li>Dead lead revival</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Operations</h3>
+          <ul>
+            <li>Automated reports</li>
+            <li>Form → team routing</li>
+            <li>Calendar sync</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      © <span id="y"></span> beproblem.lt — „viskas veikia“.
-    </footer>
-  </div>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <!-- AI Add-ons -->
+  <section id="ai" class="ai">
+    <div class="container">
+      <h2>Smarter Workflows With AI</h2>
+      <p>Go beyond basic automation — add intelligence to your systems.</p>
+      <div class="cards">
+        <div class="card">AI-written reminders</div>
+        <div class="card">Chatbots for support</div>
+        <div class="card">Predictive client insights</div>
+        <div class="card">Automatic meeting notes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>Practical Automation, Built in Lithuania</h2>
+      <p>We help Lithuanian businesses reduce repetitive work and improve client communication. Unlike large consultancies, we focus on fast, lightweight solutions using tools you already know — Google, email, CRM, spreadsheets.</p>
+    </div>
+  </section>
+
+  <!-- Case Examples -->
+  <section id="cases" class="cases">
+    <div class="container">
+      <h2>What Automation Looks Like in Practice</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Dental Clinic</h3>
+          <p>Automated check-up reminders reduce no-shows by 20%.</p>
+        </div>
+        <div class="card">
+          <h3>Veterinary Clinic</h3>
+          <p>AI-personalized vaccine reminders boost compliance.</p>
+        </div>
+        <div class="card">
+          <h3>Recruitment Agency</h3>
+          <p>Job applications flow into CRM with instant replies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Let’s Automate Your First Workflow</h2>
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="text" placeholder="Company" />
+        <textarea placeholder="Message" rows="4"></textarea>
+        <button type="submit" class="btn">Start Free Pilot Automation</button>
+      </form>
+      <p>Email: hello@yourdomain.lt | Phone: +370 XXX XXX</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Donatas Automations | Business automation made simple – save time, reduce costs, keep clients engaged.</p>
+    </div>
+  </footer>
 </body>
 </html>
