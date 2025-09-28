@@ -1,125 +1,116 @@
-/* Reset & Fonts */
-* {
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #333;
   line-height: 1.6;
-}
-a { text-decoration: none; color: inherit; }
-
-/* Containers */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+  color: #333;
 }
 
-/* Navbar */
-.navbar {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-}
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #0077cc;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-.nav-links a:hover {
-  color: #0077cc;
-}
-
-/* Hero */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero.jpg') no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 6rem 1rem;
-}
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-.btn {
-  background: #0077cc;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 30px;
-  font-weight: bold;
-}
-.btn:hover { background: #005fa3; }
-
-/* Sections */
-section {
-  padding: 4rem 0;
-}
-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #0077cc;
-}
-
-/* Cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-.card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.2s;
-}
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* Contact */
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-.contact input, .contact textarea {
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-.contact button {
-  align-self: flex-start;
-}
-
-/* Footer */
-.footer {
+.site-header {
   background: #f8f8f8;
+  padding: 20px;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #777;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.hero {
+  background: #e0f7fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.benefits {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.benefit-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.benefit-card {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.icon-placeholder {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+}
+
+.site-footer {
+  background: #222;
+  color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-links a,
+.social-links a {
+  color: #eee;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #aaa;
 }
