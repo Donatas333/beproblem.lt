@@ -2550,12 +2550,6 @@ section,
   opacity: 1;
   pointer-events: auto;
 }
-/* Hide filtered slides (JS sets .filtered-hide) */
-.portfolio-swiper .swiper-slide.filtered-hide {
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: opacity 0.25s;
-}
 
 /* Swiper navigation */
 .swiper-button-prev, .swiper-button-next {
@@ -2627,6 +2621,18 @@ section,
 .portfolio-filters li:hover {
   background: var(--accent-color);
   color: var(--contrast-color);
+}
+
+.portfolio-img {
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.13);
+  transition: transform 0.4s cubic-bezier(.5,1.6,.4,.7), filter 0.3s;
+  filter: brightness(0.91) grayscale(10%);
+}
+.portfolio-wrap:hover .portfolio-img {
+  transform: scale(1.07) rotate(-.8deg);
+  filter: brightness(1) grayscale(0%);
+  box-shadow: 0 12px 30px rgba(37,37,37,.24);
 }
 
 @media (max-width: 991px) {
