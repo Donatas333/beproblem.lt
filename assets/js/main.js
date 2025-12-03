@@ -186,6 +186,50 @@
 
   window.addEventListener("load", initSwiper);
 
+   // Portfolio Swiper + Filtering
+  document.addEventListener("DOMContentLoaded", function () {
+    // Init Swiper
+    var portfolioSwiper = new Swiper('.portfolio-swiper', {
+      slidesPerView: 4,
+      spaceBetween: 24,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      loop: false,
+      breakpoints: {
+        1200: { slidesPerView: 4 },
+        991: { slidesPerView: 3 },
+        767: { slidesPerView: 2 },
+        0:   { slidesPerView: 1 }
+      }
+    });
+  
+    // Filtering logic
+    const filterSidebar = document.querySelector('.portfolio-filters');
+    filterSidebar.addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        // Set active class
+        filterSidebar.querySelectorAll('li').forEach(li => li.classList.remove('filter-active'));
+        e.target.classList.add('filter-active');
+        let filter = e.target.getAttribute('data-filter');
+  
+        document.querySelectorAll('.portfolio-swiper .swiper-slide').forEach(function(slide) {
+          if (filter === 'all' || slide.getAttribute('data-category') === filter) {
+            slide.classList.remove('filtered-hide');
+          } else {
+            slide.classList.add('filtered-hide');
+          }
+        });
+        // Update Swiper on slide changes
+        portfolioSwiper.update();
+      }
+    });
+  });
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
