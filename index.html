@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Portfolio Bootstrap Template</title>
+  <title>Donatas - Portfolio Template</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -26,6 +26,59 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+      .portfolio-scroll {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 10px;
+      }
+      .portfolio-item {
+        flex: 0 0 auto;
+        width: 250px;
+        scroll-snap-align: start;
+      }
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.1);
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      .arrow:hover {
+        transform: translateY(-50%) scale(1.2);
+        background: rgba(255,255,255,0.2);
+      }
+      .arrow-left { left: 10px; }
+      .arrow-right { right: 10px; }
+      .arrow.hidden { display: none; }
+      .dots {
+        text-align: center;
+        margin-top: 15px;
+      }
+      .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background: #555;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+      .dot.active {
+        background: #fff;
+        transform: scale(1.3);
+      }
+    </style>
 
   <!-- =======================================================
   * Template Name: SnapFolio
@@ -519,44 +572,50 @@
         <p>Projektai, kuriuos realizuoju, sukurti taip, kad būtų praktiški ir efektyvūs.</p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      
+       <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+              <div class="row">
+                <div class="col-lg-3 filter-sidebar">
+                  <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
+                    <ul class="portfolio-filters isotope-filters">
+                      <li data-filter="*" class="filter-active">Visi Projektai</li>
+                      <li data-filter=".filter-automatizacija">Automatizacijos ir AI</li>
+                      <li data-filter=".filter-soc.tinklai">Socialiniai Tinklai</li>
+                      <li data-filter=".filter-procesai">Verslo Procesai</li>
+                      <li data-filter=".filter-visualai">Vizualai ir Media</li>
+                      <li data-filter=".filter-UI">UI ir UX</li>
+                    </ul>
+                  </div>
+                </div>
+      
+                <div class="col-lg-9 position-relative">
+                  <!-- Rodyklės -->
+                  <button class="arrow arrow-left">&#8592;</button>
+                  <button class="arrow arrow-right">&#8594;</button>
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <!-- Portfolio Container -->
+            <div class="portfolio-scroll portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="row">
-            <div class="col-lg-3 filter-sidebar">
-              <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
-                <ul class="portfolio-filters isotope-filters">
-                  <li data-filter="*" class="filter-active">Visi Projektai</li>
-                  <li data-filter=".filter-automatizacija">Automatizacijos ir AI</li>
-                  <li data-filter=".filter-soc.tinklai">Socialiniai Tinklai</li>
-                  <li data-filter=".filter-procesai">Verslo Procesai</li>
-                  <li data-filter=".filter-visualai">Vizualai ir Media</li>
-                  <li data-filter=".filter-UI">UI ir UX</li>                  
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-lg-9">
-              <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automatizacija">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/portfolio-portrait-1.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">automatizacija</span>
-                        <h4>Capturing Moments</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/portfolio-portrait-1.webp" class="glightbox" title="Capturing Moments"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
+              <div class="portfolio-item isotope-item filter-automatizacija">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/portfolio-portrait-1.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
+                  <div class="portfolio-info">
+                    <div class="content">
+                      <span class="category">automatizacija</span>
+                      <h4>Capturing Moments</h4>
+                      <div class="portfolio-links">
+                        <a href="assets/img/portfolio/portfolio-portrait-1.webp" class="glightbox" title="Capturing Moments"><i class="bi bi-plus-lg"></i></a>
+                        <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-soc.tinklai">
+                <div class="portfolio-item isotope-item filter-soc.tinklai">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-2.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
@@ -572,7 +631,7 @@
                   </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-soc.tinklai">
+                <div class="portfolio-item isotope-item filter-soc.tinklai">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-portrait-2.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
@@ -588,7 +647,7 @@
                   </div>
                 </div><!-- End Portfolio Item -->
                 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-soc.tinklai">
+                <div class="portfolio-item isotope-item filter-soc.tinklai">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-6.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
@@ -604,7 +663,7 @@
                   </div>
                 </div><!-- End Portfolio Item -->
                 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-procesai">
+                <div class="portfolio-item isotope-item filter-procesai">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-portrait-4.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
@@ -620,7 +679,7 @@
                   </div>
                 </div><!-- End Portfolio Item -->
 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-procesai">
+                <div class="portfolio-item isotope-item filter-procesai">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-5.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
@@ -636,7 +695,7 @@
                   </div>
                 </div><!-- End Portfolio Item -->
                 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-procesai">
+                <div class="portfolio-item isotope-item filter-procesai">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-6.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
@@ -652,7 +711,7 @@
                   </div>
                 </div><!-- End Portfolio Item -->
                 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-procesai">
+                <div class="portfolio-item isotope-item filter-procesai">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-6.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
@@ -668,7 +727,7 @@
                   </div>
                 </div><!-- End Portfolio Item -->
                 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automatizacija">
+                <div class="portfolio-item isotope-item filter-automatizacija">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-6.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
@@ -684,7 +743,7 @@
                   </div>
                 </div><!-- End Portfolio Item -->
                 
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automatizacija">
+                <div class="portfolio-item isotope-item filter-automatizacija">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/portfolio-6.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
                     <div class="portfolio-info">
