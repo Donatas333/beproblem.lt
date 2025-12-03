@@ -204,6 +204,126 @@
     }
   });
 
+  const portfolioData = [
+  {
+    category: "automatizacija",
+    img: "assets/img/portfolio/portfolio-portrait-1.webp",
+    title: "Capturing Moments",
+    details: "portfolio-details.html"
+  },
+  {
+    category: "soc.tinklai",
+    img: "assets/img/portfolio/portfolio-2.webp",
+    title: "Woodcraft Design",
+    details: "portfolio-details.html"
+  },
+  {
+    category: "soc.tinklai",
+    img: "assets/img/portfolio/portfolio-portrait-2.webp",
+    title: "Classic Beauty",
+    details: "portfolio-details.html"
+  },
+  {
+    category: "procesai",
+    img: "assets/img/portfolio/portfolio-portrait-4.webp",
+    title: "Natural Growth",
+    details: "portfolio-details.html"
+  },
+  // Add all portfolio items here
+];
+
+ let portfolioSwiper;
+
+function renderPortfolioSlides(filter) {
+  const wrapper = document.querySelector('.portfolio-swiper .swiper-wrapper');
+  wrapper.innerHTML = '';
+  portfolioData.forEach(item => {
+    if (filter === 'all' || item.category === filter) {
+      wrapper.innerHTML += `
+        <div class="swiper-slide" data-category="${item.category}">
+          <div class="portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="${item.img}" class="img-fluid portfolio-img" alt="${item.title}">
+              <div class="portfolio-info">
+                <div class="content">
+                  <span class="category">${item.category}</span>
+                  <h4>${item.title}</h4>
+                  <div class="portfolio-links">
+                    <a href="${item.img}" class="glightbox" title="${item.title}"><i class="bi bi-plus-lg"></i></a>
+                    <a href="${item.details}" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  renderPortfolioSlides('all'); // Initial load
+
+  portfolioSwiper = new Swiper('.portfolio-swiper', {
+    slidesPerView: 4,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    loop: false,
+    breakpoints: {
+      1200: { slidesPerView: 4 },
+      991: { slidesPerView: 3 },
+      767: { slidesPerView: 2 },
+      0:   { slidesPerView: 1 }
+    }
+  });
+
+  // Filtering logic
+  const filterSidebar = document.querySelector('.portfolio-filters');
+  filterSidebar.addEventListener('click', function (e) {
+    if (e.target.tagName === 'LI') {
+      filterSidebar.querySelectorAll('li').forEach(li => li.classList.remove('filter-active'));
+      e.target.classList.add('filter-active');
+      let filter = e.target.getAttribute('data-filter');
+
+      renderPortfolioSlides(filter);
+      portfolioSwiper.destroy(true, true); // Remove previous instance
+      portfolioSwiper = new Swiper('.portfolio-swiper', {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        loop: false,
+        breakpoints: {
+          1200: { slidesPerView: 4 },
+          991: { slidesPerView: 3 },
+          767: { slidesPerView: 2 },
+          0:   { slidesPerView: 1 }
+        }
+      });
+
+      // Re-init glightbox for new elements
+      if (window.GLightbox) { GLightbox({ selector: '.glightbox' }); }
+    }
+  });
+
+  // Initial glightbox
+  if (window.GLightbox) { GLightbox({ selector: '.glightbox' }); }
+}); 
+
   /**
    * Navmenu Scrollspy
    */
