@@ -295,14 +295,41 @@
     </section><!-- /Testimonials Section -->
         </div>
 
-      </div>
-<section id="testimonials" class="testimonials section-bg">
-  <div class="container" data-aos="fade-up">
+<!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <div><span>Check my</span> <span class="description-title">Testimonials</span></div>
+      </div><!-- End Section Title -->
 
-    <div class="section-title">
-      <h2>Testimonials</h2>
-      <p>Check my testimonials</p>
-    </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper" data-speed="600" data-delay="5000">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 20
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
 
     <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
       <script type="application/json" class="swiper-config">
@@ -327,7 +354,7 @@
               Donatas is a brilliant developer. Fast, reliable, and creative.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
-            <img src="../assets/img/testimonials/testimonial-1.jpg" class="testimonial-img" alt="">
+            <img src="../assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
             <h3>Saul Goodman</h3>
             <h4>Ceo & Founder</h4>
           </div>
@@ -340,12 +367,24 @@
               Working with Donatas was smooth and professional. Highly recommend.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
-            <img src="../assets/img/testimonials/testimonial-2.jpg" class="testimonial-img" alt="">
+            <img src="../assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
             <h3>Sara Wilsson</h3>
             <h4>Designer</h4>
           </div>
         </div>
 
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Highly recommend. Easy to communicate and proffesional approach.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="../assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
+            <h3>Donatas Paulauskas</h3>
+            <h4>Profesional</h4>
+          </div>
+        </div>
         <!-- Add more slides as needed -->
 
       </div>
