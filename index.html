@@ -981,7 +981,38 @@
               <h3>Susisiekite</h3>
               <p>Atraskime sprendimus jūsų verslui</p>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
+<!-- Replace YOUR_MAKE_WEBHOOK_URL with your actual Make.com webhook URL -->
+<form id="contactForm" action="https://hook.make.com/YOUR_MAKE_WEBHOOK_URL" method="post" class="php-email-form">
+  <div class="row gy-4">
+
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control" placeholder="Jūsų vardas" required>
+    </div>
+
+    <div class="col-md-6">
+      <input type="email" name="email" class="form-control" placeholder="Jūsų El. Paštas" required>
+    </div>
+
+    <div class="col-12">
+      <input type="text" name="subject" class="form-control" placeholder="Tema" required>
+    </div>
+
+    <div class="col-12">
+      <textarea name="message" class="form-control" rows="6" placeholder="Žinutė" required></textarea>
+    </div>
+
+    <div class="col-12 text-center">
+      <div class="loading" style="display:none;">Kraunama</div>
+      <div class="error-message" style="display:none;"></div>
+      <div class="sent-message" style="display:none;">Jūsų žinutė buvo išsiusta. Ačiū!</div>
+
+      <button type="submit" class="btn">Siųsti žinutę</button>
+    </div>
+
+  </div>
+</form>
+              
+              <!-- <form action="forms/contact.php" method="post" class="php-email-form">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
@@ -1006,7 +1037,7 @@
                     <div class="sent-message">Jūsų žinutė buvo išsiusta. Ačiū!</div>
 
                     <button type="submit" class="btn">Siųsti žinutę</button>
-                  </div>
+                  </div> -->
 
                 </div>
               </form>
