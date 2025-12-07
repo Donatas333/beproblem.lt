@@ -2647,12 +2647,6 @@ section,
   text-align: center;
 }
 
-.testimonial-item .quote-icon-left,
-.testimonial-item .quote-icon-right {
-  color: #00ff99;
-  font-size: 24px;
-}
-
 .testimonial-item p {
   font-style: italic;
   margin: 20px 0;
