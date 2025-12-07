@@ -223,6 +223,19 @@
 
   window.addEventListener("load", initSwiper);
 
+  new Swiper('.testimonials-slider', {
+  loop: true,
+  speed: 600,
+  autoplay: {
+    delay: 5000
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  }
+});
+
+
   /**
    * Navmenu Scrollspy
    */
