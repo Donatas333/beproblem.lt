@@ -2628,46 +2628,6 @@ section,
   background-color: var(--accent-color);
 }
 
-.testimonials {
-  background: #1A1A1A;
-  color: #fff;
-  padding: 60px 0;
-}
-
-.testimonials .section-title h2,
-.testimonials .section-title p {
-  color: #fff;
-}
-
-.testimonial-item {
-  background: #434343;
-  padding: 30px;
-  border-radius: 6px;
-  position: relative;
-  text-align: center;
-}
-
-.testimonial-item p {
-  font-style: italic;
-  margin: 20px 0;
-}
-
-.testimonial-img {
-  width: 80px;
-  border-radius: 50%;
-  margin: 0 auto 10px;
-}
-
-.testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.testimonial-item h4 {
-  font-size: 14px;
-  color: #ccc;
-}
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
