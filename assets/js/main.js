@@ -235,69 +235,171 @@
   }
 });
   
- // ====================== 
-// <script>
-//   (function () {
-//     const form = document.getElementById('contactForm');
-//     if (!form) return;
+// ====================== Delete from here
+// Contact form automation (POSTs to Make webhook with CORS fallback)
+(function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
 
-//     const loading = form.querySelector('.loading');
-//     const sent = form.querySelector('.sent-message');
-//     const errorBox = form.querySelector('.error-message');
+  // Make.com webhook URL (you provided it)
+  const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/07gwtdhthvw3uxkkrwok8jfygrbd5awn';
 
-//     const WEBHOOK_URL = form.getAttribute('action');
+  // Ensure form action exists (used as fallback for non-JS)
+  if (!form.getAttribute('action')) {
+    form.setAttribute('action', MAKE_WEBHOOK_URL);
+  }
 
-//     // Ensure initial state
-//     if (loading) loading.style.display = 'none';
-//     if (sent) sent.style.display = 'none';
-//     if (errorBox) errorBox.style.display = 'none';
+  const loading = form.querySelector('.loading');
+  const sent = form.querySelector('.sent-message');
+  const errorBox = form.querySelector('.error-message');
 
-//     form.addEventListener('submit', async (e) => {
-//       e.preventDefault();
+  // Ensure initial state
+  if (loading) loading.style.display = 'none';
+  if (sent) sent.style.display = 'none';
+  if (errorBox) errorBox.style.display = 'none';
 
-//       if (loading) loading.style.display = 'block';
-//       if (sent) sent.style.display = 'none';
-//       if (errorBox) {
-//         errorBox.textContent = '';
-//         errorBox.style.display = 'none';
-//       }
+  // Helper: fallback submit using a hidden iframe and temporary form (avoids CORS)
+  function fallbackSubmitToWebhook(formDataObj) {
+    return new Promise((resolve, reject) => {
+      const iframeName = 'form-target-iframe-' + Date.now();
+      const iframe = document.createElement('iframe');
+      iframe.name = iframeName;
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
 
-//       const formData = new FormData(form);
+      const tempForm = document.createElement('form');
+      tempForm.style.display = 'none';
+      tempForm.method = 'POST';
+      tempForm.action = MAKE_WEBHOOK_URL;
+      tempForm.target = iframeName;
 
-//       try {
-//         const res = await fetch(WEBHOOK_URL, {
-//           method: 'POST',
-//           body: formData
-//         });
+      Object.keys(formDataObj).forEach(key => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = formDataObj[key];
+        tempForm.appendChild(input);
+      });
 
-//         let payload = null;
-//         const ct = res.headers.get('content-type') || '';
-//         if (ct.includes('application/json')) {
-//           payload = await res.json();
-//         }
+      document.body.appendChild(tempForm);
 
-//         const ok = res.ok && (!payload || payload.status === 'OK');
+      // Submit and assume success (can't reliably detect cross-origin success)
+      tempForm.submit();
+      setTimeout(() => {
+        try { document.body.removeChild(tempForm); } catch(e){}
+        try { document.body.removeChild(iframe); } catch(e){}
+        resolve({ ok: true, fallback: true });
+      }, 1000);
+    });
+  }
 
-//         if (ok) {
-//           if (loading) loading.style.display = 'none';
-//           if (sent) sent.style.display = 'block';
-//           form.reset();
-//         } else {
-//           const msg = (payload && payload.message) || 'Įvyko klaida. Bandykite dar kartą.';
-//           throw new Error(msg);
-//         }
-//       } catch (err) {
-//         if (loading) loading.style.display = 'none';
-//         if (errorBox) {
-//           errorBox.textContent = err.message || 'Įvyko klaida. Bandykite dar kartą.';
-//           errorBox.style.display = 'block';
-//         }
-//       }
-//     });
-//   })();
-// </script>
-// ====================
-  /**
+  async function submitToMake(formData) {
+    // Try fetch -> If fetch fails (CORS), fallback to form/iframe method.
+    try {
+      // Prepare JSON payload (Make webhooks usually accept JSON)
+      const payload = {};
+      formData.forEach((value, key) => {
+        payload[key] = value;
+      });
+
+      const res = await fetch(MAKE_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload),
+      });
+
+      // Try to parse body if present (for error messages)
+      const ct = res.headers.get('content-type') || '';
+      let body = null;
+      if (ct.includes('application/json')) {
+        body = await res.json().catch(() => null);
+      } else {
+        body = await res.text().catch(() => null);
+      }
+
+      // Treat any HTTP 2xx (res.ok) as success regardless of body content
+      if (res.ok) {
+        return { ok: true, response: body, status: res.status, fallback: false };
+      }
+
+      // Non-2xx -> return object describing failure
+      return { ok: false, status: res.status, response: body, fallback: false };
+    } catch (err) {
+      // Likely a CORS/network error -> indicate fallback needed
+      return { ok: false, error: err, fallbackNeeded: true };
+    }
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (loading) loading.style.display = 'block';
+    if (sent) sent.style.display = 'none';
+    if (errorBox) {
+      errorBox.textContent = '';
+      errorBox.style.display = 'none';
+    }
+
+    const formData = new FormData(form);
+    // Convert FormData to plain object for usage in both fetch and fallback
+    const obj = {};
+    formData.forEach((v, k) => { obj[k] = v; });
+
+    try {
+      const attempt = await submitToMake(formData);
+
+      if (attempt.ok) {
+        // Success (HTTP 2xx or fallback success)
+        if (loading) loading.style.display = 'none';
+        if (sent) sent.style.display = 'block';
+        form.reset();
+        return;
+      }
+
+      // If we need to fall back to iframe method, do so
+      if (attempt.fallbackNeeded) {
+        const fallback = await fallbackSubmitToWebhook(obj);
+        if (fallback && fallback.ok) {
+          if (loading) loading.style.display = 'none';
+          if (sent) sent.style.display = 'block';
+          form.reset();
+          return;
+        } else {
+          throw new Error('Fallback submit failed');
+        }
+      }
+
+      // Non-OK HTTP response - show server message if available
+      let serverMsg = 'Įvyko klaida. Bandykite dar kartą.';
+      if (attempt.response) {
+        if (typeof attempt.response === 'string') {
+          serverMsg = attempt.response;
+        } else if (attempt.response.message) {
+          serverMsg = attempt.response.message;
+        } else {
+          serverMsg = JSON.stringify(attempt.response);
+        }
+      } else if (attempt.status) {
+        serverMsg = `Webhook returned HTTP ${attempt.status}`;
+      }
+
+      throw new Error(serverMsg);
+    } catch (err) {
+      if (loading) loading.style.display = 'none';
+      if (errorBox) {
+        // Show friendly red error bar with the message
+        errorBox.textContent = err.message || 'Įvyko klaida. Bandykite dar kartą.';
+        errorBox.style.display = 'block';
+      } else {
+        console.error('Contact form error:', err);
+        alert('Įvyko klaida siunčiant formą. Patikrinkite konsolę.');
+      }
+    }
+  });
+// Non-OK HTTP response - show server message if availab ====== Delete here
+    
    * Navmenu Scrollspy
    */
   let navmenulinks = document.querySelectorAll('.navmenu a');
