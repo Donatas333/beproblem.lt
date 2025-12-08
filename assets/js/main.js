@@ -236,8 +236,8 @@
 });
   
     
-   * Navmenu Scrollspy
-   */
+   // * Navmenu Scrollspy
+   // */
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
