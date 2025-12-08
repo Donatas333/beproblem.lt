@@ -235,6 +235,57 @@
   }
 });
 
+  // ====================
+(function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const loading = form.querySelector('.loading');
+  const sent = form.querySelector('.sent-message');
+  const errorBox = form.querySelector('.error-message');
+
+  const WEBHOOK_URL = form.getAttribute('action');
+  if (!WEBHOOK_URL || !WEBHOOK_URL.startsWith('https://')) {
+    console.error('Invalid or missing webhook URL');
+    return;
+  }
+
+  if (loading) loading.style.display = 'none';
+  if (sent) sent.style.display = 'none';
+  if (errorBox) errorBox.style.display = 'none';
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (loading) loading.style.display = 'block';
+    if (sent) sent.style.display = 'none';
+    if (errorBox) {
+      errorBox.textContent = '';
+      errorBox.style.display = 'none';
+    }
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+
+      if (loading) loading.style.display = 'none';
+      if (sent) sent.style.display = 'block';
+      form.reset();
+    } catch (err) {
+      if (loading) loading.style.display = 'none';
+      if (errorBox) {
+        errorBox.textContent = 'Įvyko klaida. Bandykite dar kartą.';
+        errorBox.style.display = 'block';
+      }
+    }
+  });
+  
  // ====================== 
 // <script>
 //   (function () {
