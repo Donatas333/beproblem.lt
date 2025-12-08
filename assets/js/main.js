@@ -236,66 +236,66 @@
 });
 
  // ====================== 
-<script>
-  (function () {
-    const form = document.getElementById('contactForm');
-    if (!form) return;
+// <script>
+//   (function () {
+//     const form = document.getElementById('contactForm');
+//     if (!form) return;
 
-    const loading = form.querySelector('.loading');
-    const sent = form.querySelector('.sent-message');
-    const errorBox = form.querySelector('.error-message');
+//     const loading = form.querySelector('.loading');
+//     const sent = form.querySelector('.sent-message');
+//     const errorBox = form.querySelector('.error-message');
 
-    const WEBHOOK_URL = form.getAttribute('action');
+//     const WEBHOOK_URL = form.getAttribute('action');
 
-    // Ensure initial state
-    if (loading) loading.style.display = 'none';
-    if (sent) sent.style.display = 'none';
-    if (errorBox) errorBox.style.display = 'none';
+//     // Ensure initial state
+//     if (loading) loading.style.display = 'none';
+//     if (sent) sent.style.display = 'none';
+//     if (errorBox) errorBox.style.display = 'none';
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+//     form.addEventListener('submit', async (e) => {
+//       e.preventDefault();
 
-      if (loading) loading.style.display = 'block';
-      if (sent) sent.style.display = 'none';
-      if (errorBox) {
-        errorBox.textContent = '';
-        errorBox.style.display = 'none';
-      }
+//       if (loading) loading.style.display = 'block';
+//       if (sent) sent.style.display = 'none';
+//       if (errorBox) {
+//         errorBox.textContent = '';
+//         errorBox.style.display = 'none';
+//       }
 
-      const formData = new FormData(form);
+//       const formData = new FormData(form);
 
-      try {
-        const res = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          body: formData
-        });
+//       try {
+//         const res = await fetch(WEBHOOK_URL, {
+//           method: 'POST',
+//           body: formData
+//         });
 
-        let payload = null;
-        const ct = res.headers.get('content-type') || '';
-        if (ct.includes('application/json')) {
-          payload = await res.json();
-        }
+//         let payload = null;
+//         const ct = res.headers.get('content-type') || '';
+//         if (ct.includes('application/json')) {
+//           payload = await res.json();
+//         }
 
-        const ok = res.ok && (!payload || payload.status === 'OK');
+//         const ok = res.ok && (!payload || payload.status === 'OK');
 
-        if (ok) {
-          if (loading) loading.style.display = 'none';
-          if (sent) sent.style.display = 'block';
-          form.reset();
-        } else {
-          const msg = (payload && payload.message) || 'Įvyko klaida. Bandykite dar kartą.';
-          throw new Error(msg);
-        }
-      } catch (err) {
-        if (loading) loading.style.display = 'none';
-        if (errorBox) {
-          errorBox.textContent = err.message || 'Įvyko klaida. Bandykite dar kartą.';
-          errorBox.style.display = 'block';
-        }
-      }
-    });
-  })();
-</script>
+//         if (ok) {
+//           if (loading) loading.style.display = 'none';
+//           if (sent) sent.style.display = 'block';
+//           form.reset();
+//         } else {
+//           const msg = (payload && payload.message) || 'Įvyko klaida. Bandykite dar kartą.';
+//           throw new Error(msg);
+//         }
+//       } catch (err) {
+//         if (loading) loading.style.display = 'none';
+//         if (errorBox) {
+//           errorBox.textContent = err.message || 'Įvyko klaida. Bandykite dar kartą.';
+//           errorBox.style.display = 'block';
+//         }
+//       }
+//     });
+//   })();
+// </script>
 // ====================
   /**
    * Navmenu Scrollspy
