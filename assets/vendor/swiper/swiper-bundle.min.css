@@ -59,8 +59,8 @@
    High specificity selectors so these override vendor CSS. */
 .section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet,
 #stats > .swiper-pagination .swiper-pagination-bullet {
-  width: 16px !important;
-  height: 16px !important;
+  width: 14px !important;
+  height: 14px !important;
   margin: 0 6px !important;
   border-radius: 50%;
   background: color-mix(in srgb, var(--accent-color), transparent 65%) !important; /* non-active color */
@@ -170,8 +170,8 @@
 .section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet {
   position: relative !important;
   display: inline-block !important;
-  width: 16px !important;
-  height: 16px !important;
+  width: 14px !important;
+  height: 14px !important;
   margin: 0 6px !important;
   border-radius: 50% !important;
   background: color-mix(in srgb, var(--accent-color), transparent 65%) !important;
