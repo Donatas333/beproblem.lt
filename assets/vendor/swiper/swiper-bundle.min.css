@@ -193,3 +193,59 @@
   .section-pagination-wrapper { height: 40px !important; padding: 4px 0 !important; }
   .section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet { width: 14px !important; height: 14px !important; margin: 0 5px !important; }
 }
+
+/* Active (center) slide: enlarge + light-up effect with minimal changes============================= */
+
+/* Allow enlarged slides to overflow without being clipped */
+.swiper {
+  overflow: visible !important;
+}
+
+/* Smooth transitions for slides & inner testimonial card */
+.swiper .swiper-slide,
+.swiper .swiper-slide .testimonial-item {
+  transition: transform 0.6s cubic-bezier(.2,.9,.3,1), filter 0.45s ease, box-shadow 0.45s ease;
+  will-change: transform, filter, box-shadow;
+  transform-origin: center center;
+}
+
+/* Make the active slide stand out: scale up, lift, brighten, stronger shadow, higher z-index */
+.swiper-slide-active .testimonial-item {
+  transform: translateY(-10px) scale(1.08);
+  filter: brightness(1.12) saturate(1.02);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.28);
+  z-index: 50;
+}
+
+/* Slightly de-emphasize neighbours for contrast (previous/next) */
+.swiper-slide-prev .testimonial-item,
+.swiper-slide-next .testimonial-item {
+  transform: translateY(0) scale(0.98);
+  filter: brightness(0.94);
+  z-index: 30;
+}
+
+/* For all other non-neighbor slides, keep them a bit smaller/darker to focus center */
+.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) .testimonial-item {
+  transform: translateY(0) scale(0.96);
+  filter: brightness(0.9);
+  opacity: 0.95;
+  z-index: 20;
+}
+
+/* Mobile: tone down the scale so layout stays stable */
+@media (max-width: 768px) {
+  .swiper-slide-active .testimonial-item {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.22);
+  }
+  .swiper-slide-prev .testimonial-item,
+  .swiper-slide-next .testimonial-item {
+    transform: translateY(0) scale(0.99);
+    filter: brightness(0.96);
+  }
+  .swiper-slide:not(.swiper-slide-active) .testimonial-item {
+    transform: translateY(0) scale(0.98);
+    filter: brightness(0.95);
+  }
+}
