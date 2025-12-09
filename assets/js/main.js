@@ -235,7 +235,47 @@
   }
 });
   
-    
+// --- Append this block to the end of assets/js/main.js ---
+// Force portfolio sliders to show 1 slide per view across the site (no per-page HTML edits needed)
+document.addEventListener('DOMContentLoaded', function () {
+  // small delay to allow any automatic Swiper initialization to run first
+  setTimeout(function () {
+    document.querySelectorAll('.portfolio-details-slider').forEach(function (container) {
+      try {
+        var instance = container.swiper; // Swiper instance (if auto-initialized)
+        if (instance) {
+          // Apply our desired params and update the instance
+          if (instance.params.slidesPerView !== 1 || instance.params.spaceBetween !== 20) {
+            instance.params.slidesPerView = 1;
+            instance.params.spaceBetween = 20;
+            instance.update();
+          }
+        } else {
+          // If the slider hasn't been initialized for some reason, init a safe swiper
+          new Swiper(container, {
+            loop: true,
+            speed: 600,
+            autoplay: { delay: 5000 },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+              el: container.querySelector('.swiper-pagination') || '.swiper-pagination',
+              type: 'bullets',
+              clickable: true
+            }
+          });
+        }
+      } catch (err) {
+        // fail silently but log for debugging
+        console && console.warn && console.warn('portfolio slider patch failed', err);
+      }
+    });
+  }, 80); // 80ms is enough in most pages; increase to 250ms if your init runs late
+});
+
+// Detele from here up===========================
+
+  
    // * Navmenu Scrollspy
    // */
   let navmenulinks = document.querySelectorAll('.navmenu a');
