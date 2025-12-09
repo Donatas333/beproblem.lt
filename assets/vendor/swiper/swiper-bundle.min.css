@@ -24,7 +24,7 @@
   position: absolute !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  bottom: -18px !important; /* change this value to move bullets lower/ higher */
+  bottom: 6px !important; /* change this value to move bullets lower/ higher */
   display: flex;
   justify-content: center;
   z-index: 50 !important;
