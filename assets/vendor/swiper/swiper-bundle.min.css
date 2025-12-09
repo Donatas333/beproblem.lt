@@ -194,7 +194,7 @@
   .section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet { width: 14px !important; height: 14px !important; margin: 0 5px !important; }
 }
 
-/* Active (center) slide: enlarge + light-up effect with minimal changes============================= */
+/* Active (center) slide: stronger enlarge + light-up; also give the adjacent slide a milder light-up */
 
 /* Allow enlarged slides to overflow without being clipped */
 .swiper {
@@ -209,43 +209,60 @@
   transform-origin: center center;
 }
 
-/* Make the active slide stand out: scale up, lift, brighten, stronger shadow, higher z-index */
+/* Make the active slide stand out: larger scale, more lift, brighter, stronger shadow, higher z-index */
 .swiper-slide-active .testimonial-item {
-  transform: translateY(-10px) scale(1.08);
-  filter: brightness(1.12) saturate(1.02);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.28);
+  transform: translateY(-14px) scale(1.12);
+  filter: brightness(1.18) saturate(1.05);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+  z-index: 60;
+}
+
+/* Give the adjacent slide (next) a visible but slightly milder highlight so two cards feel prominent.
+   Also apply a gentle lift to the previous slide to balance layout visually. */
+.swiper-slide-next .testimonial-item {
+  transform: translateY(-8px) scale(1.06);
+  filter: brightness(1.08) saturate(1.02);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.20);
+  z-index: 55;
+}
+
+.swiper-slide-prev .testimonial-item {
+  transform: translateY(-4px) scale(1.03);
+  filter: brightness(1.03);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
   z-index: 50;
 }
 
-/* Slightly de-emphasize neighbours for contrast (previous/next) */
-.swiper-slide-prev .testimonial-item,
-.swiper-slide-next .testimonial-item {
-  transform: translateY(0) scale(0.98);
-  filter: brightness(0.94);
-  z-index: 30;
-}
-
-/* For all other non-neighbor slides, keep them a bit smaller/darker to focus center */
+/* De-emphasize all other slides for stronger focus on the two highlighted ones */
 .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) .testimonial-item {
   transform: translateY(0) scale(0.96);
-  filter: brightness(0.9);
-  opacity: 0.95;
+  filter: brightness(0.88);
+  opacity: 0.94;
   z-index: 20;
 }
 
-/* Mobile: tone down the scale so layout stays stable */
+/* Mobile: scale values toned down to avoid layout issues */
 @media (max-width: 768px) {
   .swiper-slide-active .testimonial-item {
-    transform: translateY(-6px) scale(1.04);
-    box-shadow: 0 18px 36px rgba(0,0,0,0.22);
+    transform: translateY(-8px) scale(1.06);
+    box-shadow: 0 22px 44px rgba(0,0,0,0.28);
   }
-  .swiper-slide-prev .testimonial-item,
   .swiper-slide-next .testimonial-item {
-    transform: translateY(0) scale(0.99);
-    filter: brightness(0.96);
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+  }
+  .swiper-slide-prev .testimonial-item {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
   }
   .swiper-slide:not(.swiper-slide-active) .testimonial-item {
     transform: translateY(0) scale(0.98);
     filter: brightness(0.95);
   }
+}
+
+/* Small tweak: ensure testimonials can overlap slightly without being clipped by surrounding containers */
+section#stats,
+#stats {
+  padding-bottom: 100px; /* reserve extra space so enlarged cards and pagination don't overlap following content */
 }
