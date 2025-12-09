@@ -139,3 +139,57 @@
   .section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet-active { transform: scale(1.12) !important; }
   .swiper-slide-active .testimonial-item { transform: translateY(-3px) scale(1.01); }
 }
+
+/* Force wrapper to have visible area and center bullets */
+.section-pagination-wrapper {
+  /* Ensure wrapper has space for bullets (prevents 0 height) */
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 0 !important;
+  box-sizing: border-box !important;
+  z-index: 9999 !important;
+}
+
+/* Make the pagination itself behave like a normal flex row inside wrapper */
+.section-pagination-wrapper .swiper-pagination {
+  position: static !important;     /* wrapper controls position */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  transform: none !important;
+  left: auto !important;
+  bottom: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure bullets are not absolutely positioned and are visible */
+.section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet {
+  position: relative !important;
+  display: inline-block !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 6px !important;
+  border-radius: 50% !important;
+  background: color-mix(in srgb, var(--accent-color), transparent 65%) !important;
+  opacity: 0.85 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Active bullet */
+.section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet-active {
+  background: #e0dede !important;
+  opacity: 1 !important;
+  transform: scale(1.18) !important;
+  box-shadow: 0 8px 22px rgba(224,222,222,0.24) !important;
+}
+
+/* small-screen adjustments */
+@media (max-width: 768px) {
+  .section-pagination-wrapper { height: 40px !important; padding: 4px 0 !important; }
+  .section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet { width: 14px !important; height: 14px !important; margin: 0 5px !important; }
+}
