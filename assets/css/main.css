@@ -2673,3 +2673,33 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/* ===== portfolio slider: constrain images so they don't bleed left/right =====
+   Append this at the end of assets/css/main.css
+   Scoped to .portfolio-details-slider so it won't affect other swipers.
+*/
+.portfolio-details-slider {
+  overflow: hidden; /* prevents visible overflow while slides transition */
+}
+
+.portfolio-details-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Constrain images to slide width/height and crop if needed */
+.portfolio-details-slider .swiper-slide img {
+  width: 100%;
+  height: 480px;               /* adjust to suit your layout */
+  object-fit: cover;           /* crop to fill the slide without stretching */
+  display: block;
+}
+
+/* Responsive height adjustments */
+@media (max-width: 992px) {
+  .portfolio-details-slider .swiper-slide img { height: 360px; }
+}
+@media (max-width: 576px) {
+  .portfolio-details-slider .swiper-slide img { height: 220px; }
+}
