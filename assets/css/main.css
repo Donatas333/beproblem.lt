@@ -2703,3 +2703,27 @@ section,
 @media (max-width: 576px) {
   .portfolio-details-slider .swiper-slide img { height: 220px; }
 }
+
+/* Force portfolio slides to take full slide width so images swap one-by-one */
+.portfolio-details-slider .swiper-slide {
+  flex: 0 0 100% !important;    /* make each slide occupy full width */
+  max-width: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure images fill the slide and are cropped consistently */
+.portfolio-details-slider .swiper-slide img {
+  width: 100% !important;
+  height: 480px !important;     /* adjust if you want different height */
+  object-fit: cover !important; /* crop to fill without stretching */
+  display: block !important;
+}
+@media (max-width: 992px) {
+  .portfolio-details-slider .swiper-slide img { height: 360px !important; }
+}
+@media (max-width: 576px) {
+  .portfolio-details-slider .swiper-slide img { height: 220px !important; }
+}
