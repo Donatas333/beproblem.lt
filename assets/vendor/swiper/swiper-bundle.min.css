@@ -212,7 +212,7 @@
 /* Make the active slide stand out: larger scale, more lift, brighter, stronger shadow, higher z-index */
 .swiper-slide-active .testimonial-item {
   transform: translateY(-14px) scale(1.12);
-  filter: brightness(1.18) saturate(1.05);
+  filter: brightness(1.05) saturate(1.05);
   box-shadow: 0 40px 80px rgba(0,0,0,0.35);
   z-index: 60;
 }
@@ -221,7 +221,7 @@
    Also apply a gentle lift to the previous slide to balance layout visually. */
 .swiper-slide-next .testimonial-item {
   transform: translateY(-8px) scale(1.06);
-  filter: brightness(1.08) saturate(1.02);
+  filter: brightness(1.05) saturate(1.02);
   box-shadow: 0 24px 48px rgba(0,0,0,0.20);
   z-index: 55;
 }
