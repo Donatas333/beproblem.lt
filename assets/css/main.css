@@ -2762,3 +2762,37 @@ section,
   opacity: 1 !important;
   outline: none !important;
 }
+
+/* --------------------------------- new update */
+
+/* Ensure pagination sits below the image (at the bottom of the slider container) */
+.portfolio-details-slider {
+  position: relative;        /* anchor for absolute pagination */
+  padding-bottom: 56px;      /* reserve space for bullets below the image */
+}
+
+/* Place pagination inside the slider and above the reserved padding */
+.portfolio-details-slider .portfolio-swiper-pagination,
+.portfolio-details-slider .swiper-pagination {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;              /* distance from the bottom of the container */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 30;
+}
+
+/* small responsive tweaks (reduce reserved space on smaller screens) */
+@media (max-width: 992px) {
+  .portfolio-details-slider { padding-bottom: 48px; }
+  .portfolio-details-slider .portfolio-swiper-pagination,
+  .portfolio-details-slider .swiper-pagination { bottom: 12px; }
+}
+@media (max-width: 576px) {
+  .portfolio-details-slider { padding-bottom: 38px; }
+  .portfolio-details-slider .portfolio-swiper-pagination,
+  .portfolio-details-slider .swiper-pagination { bottom: 10px; }
+}
