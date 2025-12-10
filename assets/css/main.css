@@ -2730,7 +2730,7 @@ section,
 .portfolio-details-slider .portfolio-swiper-pagination {
   display: flex;
   justify-content: center;
-  margin-top: 14px;
+  margin-top: 10px;
   pointer-events: auto;
 }
 
