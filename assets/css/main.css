@@ -2796,3 +2796,23 @@ section,
   .portfolio-details-slider .portfolio-swiper-pagination,
   .portfolio-details-slider .swiper-pagination { bottom: 10px; }
 }
+
+/* =================================== delete here */
+
+/* --- Quick fix: prevent pagination "flash" until Swiper is initialized --- */
+/* Hide pagination by default so the browser doesn't render it in the wrong place */
+.swiper-pagination {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity .18s ease, visibility .18s ease !important;
+}
+
+/* Reveal pagination only after the Swiper root has been initialized */
+.swiper.swiper-initialized .swiper-pagination,
+.portfolio-details-slider.swiper-initialized .swiper-pagination,
+.testimonials.swiper-initialized .swiper-pagination {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
