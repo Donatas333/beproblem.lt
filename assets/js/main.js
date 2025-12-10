@@ -223,17 +223,17 @@
 
   window.addEventListener("load", initSwiper);
 
-  new Swiper('.testimonials-slider', {
-  loop: true,
-  speed: 600,
-  autoplay: {
-    delay: 5000
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  }
-});
+//   new Swiper('.testimonials-slider', {
+//   loop: true,
+//   speed: 600,
+//   autoplay: {
+//     delay: 5000
+//   },
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true
+//   }
+// });
   
 // --- Append this block to the end of assets/js/main.js ---
 // Force portfolio sliders to show 1 slide per view across the site (no per-page HTML edits needed)
