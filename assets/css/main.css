@@ -2607,7 +2607,7 @@ section,
   z-index: 1;
 }
 
-.testimonials .swiper-wrapper {
+/* .testimonials .swiper-wrapper {
   height: auto;
 }
 
@@ -2631,7 +2631,44 @@ section,
   background: #1A1A1A;
   color: #fff;
   padding: 60px 0;
+} */
+.testimonials .swiper-wrapper {
+  height: auto;
 }
+
+.testimonials {
+  position: relative; /* anchor for absolute pagination */
+  background: #1A1A1A;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.testimonials .swiper-pagination {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column; /* stacked bullets */
+  gap: 8px;
+  margin: 0;
+  z-index: 30;
+  pointer-events: auto;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 18px;
+  height: 18px;
+  background-color: var(--background-color);
+  opacity: 1;
+  border: 1px solid var(--accent-color);
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #ECECEC;
+}
+
+/* thats the new one delete from here up */
 
 .testimonials .section-title h2,
 .testimonials .section-title p {
