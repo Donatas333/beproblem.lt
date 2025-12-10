@@ -2725,3 +2725,40 @@ section,
   margin-top: 18px;
   text-align: center;
 }
+
+/* Portfolio pagination: match testimonial bullets style (scoped to portfolio-swiper-pagination) */
+.portfolio-details-slider .portfolio-swiper-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  pointer-events: auto;
+}
+
+.portfolio-details-slider .portfolio-swiper-pagination .swiper-pagination-bullet {
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 6px !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,0.12) !important; /* subtle default */
+  opacity: 0.85 !important;
+  transform: scale(1) !important;
+  transition: transform 0.22s cubic-bezier(.2,.9,.3,1), background 0.22s ease, box-shadow 0.22s ease !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Active bullet */
+.portfolio-details-slider .portfolio-swiper-pagination .swiper-pagination-bullet-active {
+  background: #e0dede !important; /* light active color (same as testimonials) */
+  opacity: 1 !important;
+  transform: scale(1.18) !important;
+  box-shadow: 0 8px 22px rgba(224,222,222,0.24) !important;
+}
+
+/* Ensure focus/hover states look good */
+.portfolio-details-slider .portfolio-swiper-pagination .swiper-pagination-bullet:hover,
+.portfolio-details-slider .portfolio-swiper-pagination .swiper-pagination-bullet:focus {
+  transform: scale(1.06) !important;
+  opacity: 1 !important;
+  outline: none !important;
+}
