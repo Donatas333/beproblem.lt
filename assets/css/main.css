@@ -2803,7 +2803,7 @@ section,
 .swiper-pagination {
   visibility: hidden !important;
   opacity: 0 !important;
-  transition: opacity .08s ease, visibility .08s ease !important;
+  transition: opacity .12s ease, visibility .12s ease !important;
 }
 
 /* Reveal pagination and enable interactions when Swiper has initialized.
@@ -2820,7 +2820,7 @@ section,
 .swiper.swiper-initialized ~ .section-pagination-wrapper .swiper-pagination,
 .section-pagination-wrapper .swiper.swiper-initialized + .swiper-pagination {
   /* add a small delay so the fade doesn't start instantly (adjust ms as needed) */
-  transition-delay: 0.16s; /* 120ms — increase if you still see a flicker */
+  transition-delay: 0.30s; /* 120ms — increase if you still see a flicker */
   visibility: visible !important;
   opacity: 1 !important;
   pointer-events: auto !important;
