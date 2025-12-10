@@ -2803,7 +2803,7 @@ section,
 .swiper-pagination {
   visibility: hidden !important;
   opacity: 0 !important;
-  transition: opacity .18s ease, visibility .18s ease !important;
+  transition: opacity .08s ease, visibility .08s ease !important;
 }
 
 /* Reveal pagination and enable interactions when Swiper has initialized.
@@ -2811,7 +2811,7 @@ section,
    - inside the initialized .swiper
    - a following sibling of the initialized .swiper (e.g. wrapped in .section-pagination-wrapper)
    - inside a container that itself gets .swiper-initialized (portfolio/testimonials)
-*/
+/* CSS-only: add short delay before starting the fade-in (helps small timing differences) */
 .swiper.swiper-initialized .swiper-pagination,
 .init-swiper.swiper-initialized .swiper-pagination,
 .portfolio-details-slider.swiper-initialized .swiper-pagination,
@@ -2819,6 +2819,8 @@ section,
 .swiper.swiper-initialized ~ .swiper-pagination,
 .swiper.swiper-initialized ~ .section-pagination-wrapper .swiper-pagination,
 .section-pagination-wrapper .swiper.swiper-initialized + .swiper-pagination {
+  /* add a small delay so the fade doesn't start instantly (adjust ms as needed) */
+  transition-delay: 0.16s; /* 120ms — increase if you still see a flicker */
   visibility: visible !important;
   opacity: 1 !important;
   pointer-events: auto !important;
