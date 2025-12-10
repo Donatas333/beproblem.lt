@@ -2797,3 +2797,29 @@ section,
   .portfolio-details-slider .swiper-pagination { bottom: 10px; }
 }
 
+/* --- Fix: hide pagination until initialized, but allow clicks after init even if pagination is outside .swiper --- */
+
+/* Hide pagination by default to prevent flash (do not disable pointer-events here) */
+.swiper-pagination {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: opacity .18s ease, visibility .18s ease !important;
+}
+
+/* Reveal pagination and enable interactions when Swiper has initialized.
+   Covers cases where pagination is:
+   - inside the initialized .swiper
+   - a following sibling of the initialized .swiper (e.g. wrapped in .section-pagination-wrapper)
+   - inside a container that itself gets .swiper-initialized (portfolio/testimonials)
+*/
+.swiper.swiper-initialized .swiper-pagination,
+.init-swiper.swiper-initialized .swiper-pagination,
+.portfolio-details-slider.swiper-initialized .swiper-pagination,
+.testimonials.swiper-initialized .swiper-pagination,
+.swiper.swiper-initialized ~ .swiper-pagination,
+.swiper.swiper-initialized ~ .section-pagination-wrapper .swiper-pagination,
+.section-pagination-wrapper .swiper.swiper-initialized + .swiper-pagination {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
