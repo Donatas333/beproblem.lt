@@ -2727,3 +2727,25 @@ section,
 @media (max-width: 576px) {
   .portfolio-details-slider .swiper-slide img { height: 220px !important; }
 }
+
+/* Scoped portfolio slider rules (targets new custom wrapper/slide classes) */
+.portfolio-details-slider .portfolio-swiper-slide {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.portfolio-details-slider .portfolio-swiper-slide img {
+  width: 100% !important;
+  height: 480px !important;     /* adjust as needed */
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.portfolio-swiper-pagination { /* style pagination if you want custom look */
+  margin-top: 18px;
+  text-align: center;
+}
