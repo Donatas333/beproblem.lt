@@ -296,27 +296,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
-// Delete from here down===
-function initSwiper() {
-  document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-    let config = JSON.parse(
-      swiperElement.querySelector(".swiper-config").innerHTML.trim()
-    );
-
-    if (swiperElement.classList.contains("swiper-tab")) {
-      initSwiperWithCustomPagination(swiperElement, config);
-    } else {
-      // create the Swiper instance
-      const instance = new Swiper(swiperElement, config);
-      // Immediately mark the container as ready so CSS can reveal pagination without flash
-      // (Swiper sets up pagination synchronously for default init, so this is safe)
-      try { swiperElement.classList.add('pagination-ready'); } catch (e) {}
-    }
-  });
-}
-
-// Initialize as soon as the DOM is parsed (earlier than window.load)
-document.addEventListener("DOMContentLoaded", initSwiper);  
-
   
 })();
