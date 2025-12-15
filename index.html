@@ -1067,15 +1067,31 @@ Optional: If you instead want to use the server forwarder (Option B), change act
 
             </div>
           </div>
-          <!-- Calendly inline widget begin -->
-          <div style="max-width: 1000px; margin: 0 auto; padding: 30px;">
-            <h2 style="text-align: center; color: #ececec; font-size: 26px; margin-bottom: 25px;">
-              Pasirinkite jums tinkamą laiką susitikimui
-                      </h2>
-          <!-- Calendly inline widget begin -->
-          <div class="calendly-inline-widget" data-url="https://calendly.com/donatas-make-com/30min?background_color=464646&text_color=ffffff&primary_color=ececec" style="min-width:320px;height:700px;"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          <!-- Calendly inline widget end -->
+<!-- Calendly inline widget begin -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+  
+  <!-- Left text section -->
+  <div style="flex: 1 1 300px; max-width: 400px; color: #ffffff;">
+    <h2 style="font-size: 28px; margin-bottom: 20px;">📈 Strateginis pokalbis</h2>
+    <p style="font-size: 16px; line-height: 1.6;">
+      Per 30 minučių aptarsime jūsų verslo procesus, naudojamus įrankius ir galimus patobulinimus. 
+      Pasidalinsiu greitais patarimais ir sėkmingų sprendimų pavyzdžiais.  
+      Jei turite konkrečių idėjų – parašykite iš anksto el. paštu: <br><strong>hello@mavenlabs.lt</strong>
+    </p>
+  </div>
+
+  <!-- Calendly widget section -->
+  <div style="flex: 1 1 500px; min-width: 320px; width: 100%; height: 900px;">
+    <div class="calendly-inline-widget" 
+         data-url="https://calendly.com/donatas-make-com/30min?background_color=transparent&text_color=ffffff&primary_color=ececec" 
+         style="width: 100%; height: 100%; overflow: auto; scrollbar-color: #ffffff transparent; scrollbar-width: thin;">
+    </div>
+  </div>
+
+</div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+
 
         </div>
 
