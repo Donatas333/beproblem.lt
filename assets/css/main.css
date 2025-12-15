@@ -2862,3 +2862,7 @@ section,
   opacity: 1 !important;
   pointer-events: auto !important;
 }
+
+.calendly-inline-widget iframe {
+  font-size: 14px !important;
+}
