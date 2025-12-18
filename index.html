@@ -94,11 +94,11 @@
               <div class="hero-text">
                 <h1>Port<span class="accent-text" data-i18n="hero.title">folio</span></h1>
                 <h2 data-i18n="hero.name">Donatas Paulauskas</h2>
-                <p class="lead"><span data-i18n="hero.intro">Aš esu</span> <span class="typed"></span>
+                <p class="lead"><span data-i18n="hero.intro">Aš esu</span> <span class="typed"></span> <span
+                    class="typed-suffix"></span>
                 </p>
-                <p class="description" data-i18n="hero.description">Padedu idėjoms virsti apčiuopiamais rezultatais,
-                  jungdamas verslo poreikius,
-                  automatizaciją ir aiškų dizainą. Mano tikslas – kad jūsų vizija taptų realybe.</p>
+                <p class="description" data-i18n="hero.description">Pradedantis verslo analitikas Sudėtingus duomenis
+                  paverčiu aiškiais verslo sprendimais.</p>
 
                 <div class="hero-actions">
                   <a href="#portfolio" class="btn btn-primary" data-i18n="hero.myWork">Mano Darbai</a>
@@ -129,6 +129,9 @@
     </section><!-- /Hero Section -->
     <!-- Services Section -->
     <section id="services" class="services section">
+
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -286,6 +289,9 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
 
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
+
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2 data-i18n="portfolio.title">Portfolio</h2>
@@ -410,10 +416,162 @@
         </div><!-- /isotope-layout -->
       </div><!-- /container -->
 
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="stats section light-background testimonials">
+
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+          <h2 data-i18n="testimonials.title">Rekomendacijos</h2>
+          <div><span data-i18n="testimonials.subtitle">Pažiūrėkite mano</span> <span class="description-title"
+              data-i18n="testimonials.reviews">Atsiliepimus</span></div>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="swiper init-swiper testimonial-swiper" data-speed="650" data-delay="5000">
+            <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 650,
+              "grabCursor": true,
+              "centeredSlides": true,
+              "slidesPerView": 1.2,
+              "spaceBetween": 12,
+              "keyboard": { "enabled": true, "onlyInViewport": true },
+              "autoplay": {
+                "delay": 5000,
+                "disableOnInteraction": false,
+                "pauseOnMouseEnter": true
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": { "slidesPerView": 1, "spaceBetween": 10 },
+                "768": { "slidesPerView": 1.6, "spaceBetween": 14 },
+                "1200": { "slidesPerView": 2.2, "spaceBetween": 18 }
+              }
+            }
+          </script>
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span data-i18n="testimonials.t1.text">Jis greitai suprato mūsų poreikius ir pasiūlė sprendimus,
+                      kurie
+                      ne tik atrodė puikiai, bet ir veikė be priekaištų.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-agne.webp" class="testimonial-img" alt="">
+                  <h3>Agnė Petrauskaitė</h3>
+                  <h4 data-i18n="testimonials.t1.role">Rinkodaros vadovė</h4>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span data-i18n="testimonials.t2.text">Darbas su Donatu buvo sklandus nuo pirmos dienos. Jis ne tik
+                      įgyvendino mūsų idėjas, bet ir pasiūlė geresnių.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-tomas.webp" class="testimonial-img" alt="">
+                  <h3>Tomas Jankauskas</h3>
+                  <h4 data-i18n="testimonials.t2.role">Verslo plėtros vadovas</h4>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span data-i18n="testimonials.t3.text">Mums reikėjo greito sprendimo, ir Donatas tai padarė per
+                      kelias
+                      dienas. Efektyvu, aišku ir kokybiška.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-marius.webp" class="testimonial-img" alt="">
+                  <h3>Marius Stankevičius</h3>
+                  <h4 data-i18n="testimonials.t3.role">IT vadovas</h4>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span data-i18n="testimonials.t4.text">Donatas sujungė techninį tikslumą su kūrybišku požiūriu.
+                      Rezultatas – profesionalus ir funkcionalus sprendimas.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-egle.webp" class="testimonial-img" alt="">
+                  <h3>Eglė Žukaitė</h3>
+                  <h4 data-i18n="testimonials.t4.role">Projektų koordinatorė</h4>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span data-i18n="testimonials.t5.text">Donatas puikiai išmano automatizacijas ir padėjo mums
+                      sutaupyti
+                      daug laiko kasdieniuose procesuose.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-laura.webp" class="testimonial-img" alt="">
+                  <h3>Laura Rimkutė</h3>
+                  <h4 data-i18n="testimonials.t5.role">Klientų aptarnavimo vadovė</h4>
+                </div>
+              </div><!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span data-i18n="testimonials.t6.text">Jo gebėjimas pritaikyti dizainą pagal mūsų prekės ženklą –
+                      išskirtinis. Viskas atrodo vientisa ir profesionalu.</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-justinas.webp" class="testimonial-img" alt="">
+                  <h3>Justinas Paulauskas</h3>
+                  <h4 data-i18n="testimonials.t6.role">Kūrybos vadovas</h4>
+                </div>
+              </div><!-- End testimonial item -->
+
+            </div> <!-- /.swiper-wrapper -->
+          </div> <!-- /.swiper -->
+
+          <!-- IMPORTANT: pagination must be OUTSIDE the .swiper element -->
+          <div class="section-pagination-wrapper">
+            <div class="swiper-pagination"></div>
+          </div>
+          <!-- </div>
+          <div class="swiper-pagination"></div> -->
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </section><!-- /Testimonials Section -->
+
+
     </section><!-- /Portfolio Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
+
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -530,6 +688,9 @@
     <!-- Stats Section -->
     <section id="stats" class="stats section light-background">
 
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row justify-content-center">
@@ -580,6 +741,9 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
+
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -695,6 +859,9 @@
 
     <!-- Resume Section -->
     <section id="resume" class="resume section">
+
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -867,151 +1034,14 @@
 
 
 
-    <!-- Testimonials Section -->
-    <section id="stats" class="stats section light-background testimonials">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
-        <h2 data-i18n="testimonials.title">Rekomendacijos</h2>
-        <div><span data-i18n="testimonials.subtitle">Pažiūrėkite mano</span> <span class="description-title"
-            data-i18n="testimonials.reviews">Atsiliepimus</span></div>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper testimonial-swiper" data-speed="650" data-delay="5000">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 650,
-              "grabCursor": true,
-              "centeredSlides": true,
-              "slidesPerView": 1.2,
-              "spaceBetween": 12,
-              "keyboard": { "enabled": true, "onlyInViewport": true },
-              "autoplay": {
-                "delay": 5000,
-                "disableOnInteraction": false,
-                "pauseOnMouseEnter": true
-              },
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": { "slidesPerView": 1, "spaceBetween": 10 },
-                "768": { "slidesPerView": 1.6, "spaceBetween": 14 },
-                "1200": { "slidesPerView": 2.2, "spaceBetween": 18 }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span data-i18n="testimonials.t1.text">Jis greitai suprato mūsų poreikius ir pasiūlė sprendimus, kurie
-                    ne tik atrodė puikiai, bet ir veikė be priekaištų.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-agne.webp" class="testimonial-img" alt="">
-                <h3>Agnė Petrauskaitė</h3>
-                <h4 data-i18n="testimonials.t1.role">Rinkodaros vadovė</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span data-i18n="testimonials.t2.text">Darbas su Donatu buvo sklandus nuo pirmos dienos. Jis ne tik
-                    įgyvendino mūsų idėjas, bet ir pasiūlė geresnių.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-tomas.webp" class="testimonial-img" alt="">
-                <h3>Tomas Jankauskas</h3>
-                <h4 data-i18n="testimonials.t2.role">Verslo plėtros vadovas</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span data-i18n="testimonials.t3.text">Mums reikėjo greito sprendimo, ir Donatas tai padarė per kelias
-                    dienas. Efektyvu, aišku ir kokybiška.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-marius.webp" class="testimonial-img" alt="">
-                <h3>Marius Stankevičius</h3>
-                <h4 data-i18n="testimonials.t3.role">IT vadovas</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span data-i18n="testimonials.t4.text">Donatas sujungė techninį tikslumą su kūrybišku požiūriu.
-                    Rezultatas – profesionalus ir funkcionalus sprendimas.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-egle.webp" class="testimonial-img" alt="">
-                <h3>Eglė Žukaitė</h3>
-                <h4 data-i18n="testimonials.t4.role">Projektų koordinatorė</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span data-i18n="testimonials.t5.text">Donatas puikiai išmano automatizacijas ir padėjo mums sutaupyti
-                    daug laiko kasdieniuose procesuose.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-laura.webp" class="testimonial-img" alt="">
-                <h3>Laura Rimkutė</h3>
-                <h4 data-i18n="testimonials.t5.role">Klientų aptarnavimo vadovė</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span data-i18n="testimonials.t6.text">Jo gebėjimas pritaikyti dizainą pagal mūsų prekės ženklą –
-                    išskirtinis. Viskas atrodo vientisa ir profesionalu.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-justinas.webp" class="testimonial-img" alt="">
-                <h3>Justinas Paulauskas</h3>
-                <h4 data-i18n="testimonials.t6.role">Kūrybos vadovas</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div> <!-- /.swiper-wrapper -->
-        </div> <!-- /.swiper -->
-
-        <!-- IMPORTANT: pagination must be OUTSIDE the .swiper element -->
-        <div class="section-pagination-wrapper">
-          <div class="swiper-pagination"></div>
-        </div>
-        <!-- </div>
-          <div class="swiper-pagination"></div> -->
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-    </section><!-- /Testimonials Section -->
 
     </div>
     <!-- Contact Section -->
     <section id="contact" class="contact section">
+
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">

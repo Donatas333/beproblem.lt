@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -37,7 +37,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -122,7 +122,7 @@
     new Waypoint({
       element: item,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = item.querySelectorAll('.progress .progress-bar');
         progress.forEach(el => {
           el.style.width = el.getAttribute('aria-valuenow') + '%';
@@ -141,13 +141,13 @@
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+  document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
       initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
@@ -156,8 +156,8 @@
       });
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+      filters.addEventListener('click', function () {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
@@ -175,7 +175,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -193,7 +193,7 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -208,11 +208,11 @@
     }
   });
 
-    /**
-   * Init swiper sliders
-   */
+  /**
+ * Init swiper sliders
+ */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -227,78 +227,178 @@
 
   window.addEventListener("load", initSwiper);
 
-//   new Swiper('.testimonials-slider', {
-//   loop: true,
-//   speed: 600,
-//   autoplay: {
-//     delay: 5000
-//   },
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true
-//   }
-// });
-  
-// --- Append this block to the end of assets/js/main.js ---
-// Force portfolio sliders to show 1 slide per view across the site (no per-page HTML edits needed)
-document.addEventListener('DOMContentLoaded', function () {
-  // small delay to allow any automatic Swiper initialization to run first
-  setTimeout(function () {
-    document.querySelectorAll('.portfolio-details-slider').forEach(function (container) {
-      try {
-        var instance = container.swiper; // Swiper instance (if auto-initialized)
-        if (instance) {
-          // Apply our desired params and update the instance
-          if (instance.params.slidesPerView !== 1 || instance.params.spaceBetween !== 20) {
-            instance.params.slidesPerView = 1;
-            instance.params.spaceBetween = 20;
-            instance.update();
-          }
-        } else {
-          // If the slider hasn't been initialized for some reason, init a safe swiper
-          new Swiper(container, {
-            loop: true,
-            speed: 600,
-            autoplay: { delay: 5000 },
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: {
-              el: container.querySelector('.swiper-pagination') || '.swiper-pagination',
-              type: 'bullets',
-              clickable: true
+  //   new Swiper('.testimonials-slider', {
+  //   loop: true,
+  //   speed: 600,
+  //   autoplay: {
+  //     delay: 5000
+  //   },
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     clickable: true
+  //   }
+  // });
+
+  // --- Append this block to the end of assets/js/main.js ---
+  // Force portfolio sliders to show 1 slide per view across the site (no per-page HTML edits needed)
+  document.addEventListener('DOMContentLoaded', function () {
+    // small delay to allow any automatic Swiper initialization to run first
+    setTimeout(function () {
+      document.querySelectorAll('.portfolio-details-slider').forEach(function (container) {
+        try {
+          var instance = container.swiper; // Swiper instance (if auto-initialized)
+          if (instance) {
+            // Apply our desired params and update the instance
+            if (instance.params.slidesPerView !== 1 || instance.params.spaceBetween !== 20) {
+              instance.params.slidesPerView = 1;
+              instance.params.spaceBetween = 20;
+              instance.update();
             }
-          });
+          } else {
+            // If the slider hasn't been initialized for some reason, init a safe swiper
+            new Swiper(container, {
+              loop: true,
+              speed: 600,
+              autoplay: { delay: 5000 },
+              slidesPerView: 1,
+              spaceBetween: 20,
+              pagination: {
+                el: container.querySelector('.swiper-pagination') || '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+              }
+            });
+          }
+        } catch (err) {
+          // fail silently but log for debugging
+          console && console.warn && console.warn('portfolio slider patch failed', err);
         }
-      } catch (err) {
-        // fail silently but log for debugging
-        console && console.warn && console.warn('portfolio slider patch failed', err);
-      }
-    });
-  }, 80); // 80ms is enough in most pages; increase to 250ms if your init runs late
-});
+      });
+    }, 80); // 80ms is enough in most pages; increase to 250ms if your init runs late
+  });
 
-// Detele from here up===========================
+  // Detele from here up===========================
 
-  
-   // * Navmenu Scrollspy
-   // */
+
+  // * Navmenu Scrollspy
+  // */
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
+    const offset = 180; // increased breathing room
+    const position = window.scrollY + offset;
+    let activeLink = null;
+
     navmenulinks.forEach(navmenulink => {
       if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
+
+      if (navmenulink.hash === '#about') {
+        const aboutSection = document.querySelector('#about');
+        const statsSection = document.querySelector('#stats');
+        if (aboutSection) {
+          const start = aboutSection.offsetTop - 420;
+          const aboutEnd = aboutSection.offsetTop + aboutSection.offsetHeight + 420;
+          const statsEnd = statsSection ? statsSection.offsetTop + statsSection.offsetHeight + 420 : 0;
+          const end = Math.max(aboutEnd, statsEnd);
+          if (position >= start && position <= end) {
+            activeLink = navmenulink;
+          }
+        }
+        return;
       }
-    })
+
+      const section = document.querySelector(navmenulink.hash);
+      if (section && position >= (section.offsetTop - 360) && position <= (section.offsetTop + section.offsetHeight + 360)) {
+        activeLink = navmenulink;
+      }
+    });
+
+    document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
-  
+
+  /**
+   * Interactive tilt for stats cards
+   */
+  document.addEventListener('DOMContentLoaded', () => {
+    const statCards = document.querySelectorAll('.stats .stats-item');
+    const MAX_TILT = 9;
+    const activeCounters = new Map();
+    const shadowTimers = new Map();
+
+    function animateCounter(span) {
+      const end = Number(span.dataset.purecounterEnd || span.textContent || 0);
+      const durationSec = Number(span.dataset.purecounterDuration || 1);
+      const duration = Math.max(durationSec * 1000, 200);
+      const startTime = performance.now();
+
+      if (activeCounters.has(span)) {
+        cancelAnimationFrame(activeCounters.get(span));
+      }
+
+      span.textContent = '0';
+
+      const step = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = Math.floor(progress * end);
+        span.textContent = value.toLocaleString();
+        if (progress < 1) {
+          const rafId = requestAnimationFrame(step);
+          activeCounters.set(span, rafId);
+        } else {
+          span.textContent = end.toLocaleString();
+          activeCounters.delete(span);
+        }
+      };
+
+      const rafId = requestAnimationFrame(step);
+      activeCounters.set(span, rafId);
+    }
+
+    statCards.forEach((card) => {
+      card.addEventListener('mousemove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const percentX = (x / rect.width) - 0.5;
+        const percentY = (y / rect.height) - 0.5;
+        const tiltX = percentX * MAX_TILT;
+        const tiltY = -percentY * MAX_TILT;
+
+        card.style.setProperty('--tiltX', `${tiltX}deg`);
+        card.style.setProperty('--tiltY', `${tiltY}deg`);
+        card.style.setProperty('--lift', '-10px');
+        card.style.setProperty('--scale', '1.1');
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--tiltX', '0deg');
+        card.style.setProperty('--tiltY', '0deg');
+        card.style.setProperty('--lift', '0px');
+        card.style.setProperty('--scale', '1');
+
+        if (shadowTimers.has(card)) {
+          clearTimeout(shadowTimers.get(card));
+          shadowTimers.delete(card);
+        }
+        card.classList.remove('shadow-on');
+      });
+
+      card.addEventListener('mouseenter', () => {
+        card.style.setProperty('--lift', '-8px');
+        card.style.setProperty('--scale', '1.08');
+        card.classList.add('shadow-on');
+
+        const counter = card.querySelector('.purecounter');
+        if (counter) {
+          animateCounter(counter);
+        }
+      });
+    });
+  });
+
 })();
