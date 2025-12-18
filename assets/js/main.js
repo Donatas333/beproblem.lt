@@ -401,4 +401,33 @@
     });
   });
 
+  /**
+   * Mouse tracking on profile image with snake-like layer following
+   */
+  const profileImage = document.querySelector('.hero .hero-visual .profile-container .profile-image');
+  const profileBg2 = document.querySelector('.hero .hero-visual .profile-container .profile-background-2');
+  const profileBg = document.querySelector('.hero .hero-visual .profile-container .profile-background');
+  const profileBg3 = document.querySelector('.hero .hero-visual .profile-container .profile-background-3');
+  const profileBgSec = document.querySelector('.hero .hero-visual .profile-container .profile-background-secondary');
+
+  if (profileImage) {
+    profileImage.addEventListener('mousemove', function (e) {
+      // Add mouse-move class to trigger transform
+      profileImage.classList.add('mouse-move');
+      profileBg2?.classList.add('snake-follow');
+      profileBg?.classList.add('snake-follow');
+      profileBg3?.classList.add('snake-follow');
+      profileBgSec?.classList.add('snake-follow');
+    });
+
+    profileImage.addEventListener('mouseleave', function () {
+      // Remove mouse-move class to reset position
+      profileImage.classList.remove('mouse-move');
+      profileBg2?.classList.remove('snake-follow');
+      profileBg?.classList.remove('snake-follow');
+      profileBg3?.classList.remove('snake-follow');
+      profileBgSec?.classList.remove('snake-follow');
+    });
+  }
+
 })();
