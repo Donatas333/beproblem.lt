@@ -6,6 +6,11 @@
 * License: https://bootstrapmade.com/license/
 */
 
+/* Global font-size increase */
+html {
+  font-size: 18px; /* Increased by ~2px from default 16px */
+}
+
 /*--------------------------------------------------------------
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
