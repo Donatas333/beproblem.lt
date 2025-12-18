@@ -1229,7 +1229,15 @@ section>.container,
 }
 
 @media (max-width: 991px) {
+  .about .row {
+    flex-direction: column-reverse;
+  }
+
   .about .profile-card {
+    margin-bottom: 8rem;
+  }
+
+  .about .about-content {
     margin-bottom: 3rem;
   }
 }

@@ -430,4 +430,35 @@
     });
   }
 
+  /**
+   * Page fade in/out transitions on navigation
+   */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Only apply fade effect for internal navigation links
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        
+        // Fade out current content
+        document.body.classList.add('fade-out');
+        
+        // After fade out, navigate to the section
+        setTimeout(() => {
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            // Scroll to target
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+          
+          // Remove fade-out class to trigger fade-in
+          document.body.classList.remove('fade-out');
+        }, 150);
+      }
+    });
+  });
+
 })();
