@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,12 +46,18 @@
     <div class="header-container d-flex flex-column align-items-start">
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="https://beproblem.lt/index.html#hero"><i class="bi bi-house navicon"></i>Pradžia</a></li>
-          <li><a href="https://beproblem.lt/index.html#about"><i class="bi bi-person navicon"></i> Apie mane</a></li>
-          <li><a href="https://beproblem.lt/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> CV</a></li>
-          <li><a href="https://beproblem.lt/index.html#portfolio" class="active"><i class="bi bi-images navicon"></i> Projektai</a></li>
-          <li><a href="https://beproblem.lt/index.html#services"><i class="bi bi-hdd-stack navicon"></i> Paslaugos</a></li>
-          <li><a href="https://beproblem.lt/index.html#contact"><i class="bi bi-envelope navicon"></i> Kontaktai</a></li>
+          <li><a href="https://beproblem.lt/index.html#hero" class="active"><i class="bi bi-house navicon"></i><span
+                data-i18n="nav.home">Pradžia</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#services"><i class="bi bi-hdd-stack navicon"></i> <span
+                data-i18n="nav.services">Paslaugos</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#portfolio"><i class="bi bi-images navicon"></i> <span
+                data-i18n="nav.portfolio">Projektai</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#about"><i class="bi bi-person navicon"></i> <span
+                data-i18n="nav.about">Apie mane</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> <span
+                data-i18n="nav.resume">CV</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#contact"><i class="bi bi-envelope navicon"></i> <span
+                data-i18n="nav.contact">Kontaktai</span></a></li>
         </ul>
       </nav>
 
@@ -58,6 +66,14 @@
         <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://github.com/Donatas333" class="github"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/donatas73a/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <div class="language-switcher text-center mt-3">
+        <button class="lang-btn" data-lang="lt" aria-label="Switch to Lithuanian">LT</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="nl" aria-label="Switch to Dutch">NL</button>
       </div>
 
 
@@ -70,11 +86,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Apie Portfolio</h1>
+        <h1 class="mb-2 mb-lg-0" data-i18n="portfolioPages.common.pageTitle">Apie Portfolio</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Pradžia</a></li>
-            <li class="current">Portfolio Apžvalga</li>
+            <li><a href="index.html" data-i18n="nav.home">Pradžia</a></li>
+            <li class="current" data-i18n="portfolioPages.common.breadcrumbCurrent">Portfolio Apžvalga</li>
           </ol>
         </nav>
       </div>
@@ -111,19 +127,23 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-main-1.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-main-1.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-main-2.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-main-2.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-main-3.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-main-3.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
-                
+
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-main-4.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-main-4.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
 
               </div>
@@ -133,57 +153,67 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-left" data-aos-delay="200">
-              <h3>Projekto Informacija</h3>
+              <h3 data-i18n="portfolioPages.common.infoTitle">Projekto Informacija</h3>
               <ul>
-                <li><strong>Kategorija</strong>: CRM Automization</li>
-                <li><strong>Klientas</strong>: FlexiForce B.V.</li>
-                <li><strong>Projekto data</strong>: 20 Birželio, 2025</li>
+                <li><strong data-i18n="portfolioPages.common.categoryLabel">Kategorija</strong>: <span
+                    data-i18n="portfolioPages.autoCRM.category">CRM Automization</span></li>
+                <li><strong data-i18n="portfolioPages.common.clientLabel">Klientas</strong>: <span
+                    data-i18n="portfolioPages.autoCRM.client">FlexiForce B.V.</span></li>
+                <li><strong data-i18n="portfolioPages.common.dateLabel">Projekto data</strong>: <span
+                    data-i18n="portfolioPages.autoCRM.date">20 Birželio, 2025</span></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-12">
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Projekto Apžvalga</h2>
-              <p>
-                Automatizuota CRM sistema, kuri palengvina verslo procesus, nuolat atnaujindama klientų duomenis ir suteikdama greitą prieigą prie reikiamos informacijos. Ji automatiškai generuoja kasdienines ar savaitines ataskaitas pagal verslo poreikius, taip sumažindama rankinio darbo kiekį ir užtikrindama efektyvesnį sprendimų priėmimą.
+              <h2 data-i18n="portfolioPages.common.overviewTitle">Projekto Apžvalga</h2>
+              <p data-i18n="portfolioPages.autoCRM.overview1">
+                Automatizuota CRM sistema, kuri palengvina verslo procesus, nuolat atnaujindama klientų duomenis ir
+                suteikdama greitą prieigą prie reikiamos informacijos. Ji automatiškai generuoja kasdienines ar
+                savaitines ataskaitas pagal verslo poreikius, taip sumažindama rankinio darbo kiekį ir užtikrindama
+                efektyvesnį sprendimų priėmimą.
               </p>
-              <p>
+              <p data-i18n="portfolioPages.autoCRM.overview2">
                 Automatizacija leidžia verslui sutelkti dėmesį į klientų aptarnavimą ir augimą, o ne į duomenų tvarkymą.
               </p>
 
               <div class="features mt-4">
-                <h3>Pagrindinės Funkcijos</h3>
+                <h3 data-i18n="portfolioPages.common.featuresTitle">Pagrindinės Funkcijos</h3>
                 <div class="row gy-3">
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                       <i class="bi bi-arrow-clockwise"></i>
-                      <h4>Automatinis Duomenų Atnaujinimas</h4>
-                      <p>CRM nuolat sinchronizuojasi su jūsų sistemomis, kad informacija būtų visada aktuali</p>
+                      <h4 data-i18n="portfolioPages.autoCRM.feature1Title">Automatinis Duomenų Atnaujinimas</h4>
+                      <p data-i18n="portfolioPages.autoCRM.feature1Desc">CRM nuolat sinchronizuojasi su jūsų sistemomis,
+                        kad informacija būtų visada aktuali</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
                       <i class="bi bi-search"></i>
-                      <h4>Greita Informacijos Paieška</h4>
-                      <p>Reikalingi duomenys ištraukiami akimirksniu, be rankinio naršymo ar ilgo ieškojimo</p>
+                      <h4 data-i18n="portfolioPages.autoCRM.feature2Title">Greita Informacijos Paieška</h4>
+                      <p data-i18n="portfolioPages.autoCRM.feature2Desc">Reikalingi duomenys ištraukiami akimirksniu, be
+                        rankinio naršymo ar ilgo ieškojimo</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
                       <i class="bi bi-clipboard-data"></i>
-                      <h4>Ataskaitų Generavimas</h4>
-                      <p>Kasdieninės ar savaitinės ataskaitos automatiškai paruošiamos pagal verslo poreikius</p>
+                      <h4 data-i18n="portfolioPages.autoCRM.feature3Title">Ataskaitų Generavimas</h4>
+                      <p data-i18n="portfolioPages.autoCRM.feature3Desc">Kasdieninės ar savaitinės ataskaitos
+                        automatiškai paruošiamos pagal verslo poreikius</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="700">
                       <i class="bi bi-chat-heart"></i>
-                      <h4>Klientų Pasitenkinimas</h4>
-                      <p>Sistema padeda geriau suprasti klientų elgseną ir poreikius, užtikrinant kokybiškesnį aptarnavimą</p>
+                      <h4 data-i18n="portfolioPages.autoCRM.feature4Title">Klientų Pasitenkinimas</h4>
+                      <p data-i18n="portfolioPages.autoCRM.feature4Desc">Sistema padeda geriau suprasti klientų elgseną
+                        ir poreikius, užtikrinant kokybiškesnį aptarnavimą</p>
                     </div>
                   </div>
                 </div>
@@ -203,17 +233,20 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span>Visos teisės saugomos</span></p>
+        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span data-i18n="footer.rights">Visos
+            teisės saugomos</span></p>
       </div>
       <div class="credits">
-        <a href="https://beproblem.lt/">Kuriame sprendimus, kurie palengvina jūsų kasdienybę</a>
+        <a href="https://beproblem.lt/" data-i18n="footer.tagline">Kuriame sprendimus, kurie palengvina jūsų
+          kasdienybę</a>
       </div>
     </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -229,6 +262,9 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- i18n Script -->
+  <script src="assets/js/i18n.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>

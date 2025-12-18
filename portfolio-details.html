@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,12 +46,18 @@
     <div class="header-container d-flex flex-column align-items-start">
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="https://beproblem.lt/index.html#hero"><i class="bi bi-house navicon"></i>Pradžia</a></li>
-          <li><a href="https://beproblem.lt/index.html#about"><i class="bi bi-person navicon"></i> Apie mane</a></li>
-          <li><a href="https://beproblem.lt/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> CV</a></li>
-          <li><a href="https://beproblem.lt/index.html#portfolio" class="active"><i class="bi bi-images navicon"></i> Projektai</a></li>
-          <li><a href="https://beproblem.lt/index.html#services"><i class="bi bi-hdd-stack navicon"></i> Paslaugos</a></li>
-          <li><a href="https://beproblem.lt/index.html#contact"><i class="bi bi-envelope navicon"></i> Kontaktai</a></li>
+          <li><a href="https://beproblem.lt/index.html#hero"><i class="bi bi-house navicon"></i><span
+                data-i18n="nav.home">Pradžia</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#services"><i class="bi bi-hdd-stack navicon"></i> <span
+                data-i18n="nav.services">Paslaugos</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#portfolio" class="active"><i class="bi bi-images navicon"></i>
+              <span data-i18n="nav.portfolio">Projektai</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#about"><i class="bi bi-person navicon"></i> <span
+                data-i18n="nav.about">Apie mane</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> <span
+                data-i18n="nav.resume">CV</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#contact"><i class="bi bi-envelope navicon"></i> <span
+                data-i18n="nav.contact">Kontaktai</span></a></li>
         </ul>
       </nav>
 
@@ -58,6 +66,14 @@
         <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://github.com/Donatas333" class="github"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/donatas73a/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <div class="language-switcher text-center mt-3">
+        <button class="lang-btn" data-lang="lt" aria-label="Switch to Lithuanian">LT</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="nl" aria-label="Switch to Dutch">NL</button>
       </div>
 
 
@@ -70,11 +86,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Apie Portfolio</h1>
+        <h1 class="mb-2 mb-lg-0" data-i18n="portfolioPages.common.pageTitle">Apie Portfolio</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Pradžia</a></li>
-            <li class="current">Portfolio Apžvalga</li>
+            <li><a href="index.html" data-i18n="nav.home">Pradžia</a></li>
+            <li class="current" data-i18n="portfolioPages.common.breadcrumbCurrent">Portfolio Apžvalga</li>
           </ol>
         </nav>
       </div>
@@ -109,15 +125,18 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-1.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-10.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-10.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-7.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-7.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
 
               </div>
@@ -127,74 +146,86 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-left" data-aos-delay="200">
-              <h3>Projekto Informacija</h3>
+              <h3 data-i18n="portfolioPages.common.infoTitle">Projekto Informacija</h3>
               <ul>
-                <li><strong>Kategorija</strong>: Web Development</li>
-                <li><strong>Klientas</strong>: Victoria Technologies</li>
-                <li><strong>Projekto data</strong>: 01 Kovo, 2024</li>
+                <li><strong data-i18n="portfolioPages.common.categoryLabel">Kategorija</strong>: <span
+                    data-i18n="portfolioPages.generic.category">Web Development</span></li>
+                <li><strong data-i18n="portfolioPages.common.clientLabel">Klientas</strong>: <span
+                    data-i18n="portfolioPages.generic.client">Victoria Technologies</span></li>
+                <li><strong data-i18n="portfolioPages.common.dateLabel">Projekto data</strong>: <span
+                    data-i18n="portfolioPages.generic.date">01 Kovo, 2024</span></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-12">
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Projekto Apžvalga</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              <h2 data-i18n="portfolioPages.common.overviewTitle">Projekto Apžvalga</h2>
+              <p data-i18n="portfolioPages.generic.overview1">
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia.
+                Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia
+                accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt
+                eius.
               </p>
-              <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
+              <p data-i18n="portfolioPages.generic.overview2">
+                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et.
+                Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt
+                molestiae laboriosam.
               </p>
 
               <div class="features mt-4">
-                <h3>Pagrindinės Funkcijos</h3>
+                <h3 data-i18n="portfolioPages.common.featuresTitle">Pagrindinės Funkcijos</h3>
                 <div class="row gy-3">
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                       <i class="bi bi-check-circle-fill"></i>
-                      <h4>Responsive Design</h4>
-                      <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                      <h4 data-i18n="portfolioPages.generic.feature1Title">Responsive Design</h4>
+                      <p data-i18n="portfolioPages.generic.feature1Desc">Voluptatum deleniti atque corrupti quos dolores
+                        et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
                       <i class="bi bi-shield-check"></i>
-                      <h4>Advanced Security</h4>
-                      <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                      <h4 data-i18n="portfolioPages.generic.feature2Title">Advanced Security</h4>
+                      <p data-i18n="portfolioPages.generic.feature2Desc">Minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
                       <i class="bi bi-graph-up"></i>
-                      <h4>Performance Optimization</h4>
-                      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                      <h4 data-i18n="portfolioPages.generic.feature3Title">Performance Optimization</h4>
+                      <p data-i18n="portfolioPages.generic.feature3Desc">Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="700">
                       <i class="bi bi-gear"></i>
-                      <h4>Easy Integration</h4>
-                      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                      <h4 data-i18n="portfolioPages.generic.feature4Title">Easy Integration</h4>
+                      <p data-i18n="portfolioPages.generic.feature4Desc">Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
-<!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <div><span>Check my</span> <span class="description-title">Testimonials</span></div>
-      </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Testimonials</h2>
+            <div><span>Check my</span> <span class="description-title">Testimonials</span></div>
+          </div><!-- End Section Title -->
 
-        <div class="swiper init-swiper" data-speed="600" data-delay="5000">
-          <script type="application/json" class="swiper-config">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="swiper init-swiper" data-speed="600" data-delay="5000">
+              <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 600,
@@ -219,92 +250,103 @@
               }
             }
           </script>
-          <div class="swiper-wrapper">
+              <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <div class="testimonial-item" "="">
-            <p>
-              <i class=" bi bi-quote quote-icon-left"></i>
-                <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span data-i18n="portfolioPages.generic.t1Text">Proin iaculis purus consequat sem cure digni ssim
+                        donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh
+                        et. Maecen aliquam, risus at semper.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
+                    <h3 data-i18n="portfolioPages.generic.t1Name">Saul Goodman</h3>
+                    <h4 data-i18n="portfolioPages.generic.t1Role">Ceo &amp; Founder</h4>
+                  </div>
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span data-i18n="portfolioPages.generic.t2Text">Export tempor illum tamen malis malis eram quae
+                        irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat
+                        irure amet legam anim culpa.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
+                    <h3 data-i18n="portfolioPages.generic.t2Name">Sara Wilsson</h3>
+                    <h4 data-i18n="portfolioPages.generic.t2Role">Designer</h4>
+                  </div>
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span data-i18n="portfolioPages.generic.t3Text">Enim nisi quem export duis labore cillum quae
+                        magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute
+                        amet eram fore quis sint minim.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
+                    <h3 data-i18n="portfolioPages.generic.t3Name">Jena Karlis</h3>
+                    <h4 data-i18n="portfolioPages.generic.t3Role">Store Owner</h4>
+                  </div>
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span data-i18n="portfolioPages.generic.t4Text">Fugiat enim eram quae cillum dolore dolor amet
+                        nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore
+                        quem dolore labore illum veniam.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
+                    <h3 data-i18n="portfolioPages.generic.t4Name">Matt Brandon</h3>
+                    <h4 data-i18n="portfolioPages.generic.t4Role">Freelancer</h4>
+                  </div>
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/profile/profile-square-2.webp" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span data-i18n="portfolioPages.generic.t5Text">Quis quorum aliqua sint quem legam fore sunt eram
+                        irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam
+                        culpa fore nisi cillum quid.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
+                    <h3 data-i18n="portfolioPages.generic.t5Name">John Larson</h3>
+                    <h4 data-i18n="portfolioPages.generic.t5Role">Entrepreneur</h4>
+                  </div>
+                </div><!-- End testimonial item -->
+
               </div>
-            </div><!-- End testimonial item -->
+              <div class="swiper-pagination"></div>
+            </div>
 
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
 
     </section><!-- /Testimonials Section -->
-        </div>
+    </div>
 
-<!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <div><span>Check my</span> <span class="description-title">Testimonials</span></div>
-      </div><!-- End Section Title -->
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2 data-i18n="portfolioPages.generic.testimonialsTitle">Testimonials</h2>
+      <div><span data-i18n="portfolioPages.generic.testimonialsLead">Check my</span> <span class="description-title"
+          data-i18n="portfolioPages.generic.testimonialsHighlight">Testimonials</span></div>
+    </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper" data-speed="600" data-delay="5000">
-          <script type="application/json" class="swiper-config">
+      <div class="swiper init-swiper" data-speed="600" data-delay="5000">
+        <script type="application/json" class="swiper-config">
               {
               "loop": true,
               "speed": 600,
@@ -329,10 +371,10 @@
               }
             }
           </script>
-          <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
 
-    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-      <script type="application/json" class="swiper-config">
+          <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <script type="application/json" class="swiper-config">
         {
           "loop": true,
           "speed": 600,
@@ -345,56 +387,59 @@
         }
       </script>
 
-      <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
 
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Donatas is a brilliant developer. Fast, reliable, and creative.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="../assets/img/profile/profile-2.webp" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo & Founder</h4>
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    <span data-i18n="portfolioPages.generic.t6Text">Donatas is a brilliant developer. Fast, reliable,
+                      and creative.</span>
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-2.webp" class="testimonial-img" alt="">
+                  <h3 data-i18n="portfolioPages.generic.t6Name">Saul Goodman</h3>
+                  <h4 data-i18n="portfolioPages.generic.t6Role">Ceo &amp; Founder</h4>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    <span data-i18n="portfolioPages.generic.t7Text">Working with Donatas was smooth and professional.
+                      Highly recommend.</span>
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-square-3.webp" class="testimonial-img" alt="">
+                  <h3 data-i18n="portfolioPages.generic.t7Name">Sara Wilsson</h3>
+                  <h4 data-i18n="portfolioPages.generic.t7Role">Designer</h4>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    <span data-i18n="portfolioPages.generic.t8Text">Highly recommend. Easy to communicate and
+                      professional approach.</span>
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
+                  <h3 data-i18n="portfolioPages.generic.t8Name">Donatas Paulauskas</h3>
+                  <h4 data-i18n="portfolioPages.generic.t8Role">Profesional</h4>
+                </div>
+              </div>
+              <!-- Add more slides as needed -->
+
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
+
         </div>
+        </section>
 
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Working with Donatas was smooth and professional. Highly recommend.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="../assets/img/profile/profile-square-3.webp" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Highly recommend. Easy to communicate and proffesional approach.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="../assets/img/profile/profile-square-2.webp" class="testimonial-img" alt="">
-            <h3>Donatas Paulauskas</h3>
-            <h4>Profesional</h4>
-          </div>
-        </div>
-        <!-- Add more slides as needed -->
-
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-
-  </div>
-</section>
-
-    </section><!-- /Portfolio Details Section -->
+        </section><!-- /Portfolio Details Section -->
 
   </main>
 
@@ -402,16 +447,19 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span>Visos teisės saugomos</span></p>
+        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span data-i18n="footer.rights">Visos
+            teisės saugomos</span></p>
       </div>
       <div class="credits">
-        <a href="https://beproblem.lt/">Kuriame sprendimus, kurie palengvina jūsų kasdienybę</a>
+        <a href="https://beproblem.lt/" data-i18n="footer.tagline">Kuriame sprendimus, kurie palengvina jūsų
+          kasdienybę</a>
       </div>
     </div>
 
   </footer>
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -427,6 +475,9 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- i18n Script -->
+  <script src="assets/js/i18n.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>

@@ -15,7 +15,11 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <!-- If you have an Adobe Fonts kit for Adobe Caslon Pro, add it below:
+  <link rel="stylesheet" href="https://use.typekit.net/XXXXXXX.css"> -->
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,13 +31,6 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: SnapFolio
-  * Template URL: https://bootstrapmade.com/snapfolio-bootstrap-portfolio-template/
-  * Updated: Jul 21 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -44,12 +41,18 @@
     <div class="header-container d-flex flex-column align-items-start">
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Pradžia</a></li>
-          <li><a href="#about"><i class="bi bi-person navicon"></i> Apie mane</a></li>
-          <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> CV</a></li>
-          <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projektai</a></li>
-          <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Paslaugos</a></li>
-          <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Kontaktai</a></li>
+          <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span
+                data-i18n="nav.home">Pradžia</span></a></li>
+          <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> <span
+                data-i18n="nav.services">Paslaugos</span></a></li>
+          <li><a href="#portfolio"><i class="bi bi-images navicon"></i> <span
+                data-i18n="nav.portfolio">Projektai</span></a></li>
+          <li><a href="#about"><i class="bi bi-person navicon"></i> <span data-i18n="nav.about">Apie mane</span></a>
+          </li>
+          <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> <span
+                data-i18n="nav.resume">CV</span></a></li>
+          <li><a href="#contact"><i class="bi bi-envelope navicon"></i> <span
+                data-i18n="nav.contact">Kontaktai</span></a></li>
         </ul>
       </nav>
 
@@ -58,6 +61,14 @@
         <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/in/donatas73a/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <div class="language-switcher text-center mt-3">
+        <button class="lang-btn" data-lang="lt" aria-label="Switch to Lithuanian">LT</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="nl" aria-label="Switch to Dutch">NL</button>
       </div>
 
     </div>
@@ -81,14 +92,17 @@
 
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
               <div class="hero-text">
-                <h1>Port<span class="accent-text">folio</span></h1>
-                <h2>Donatas Paulauskas</h2>
-                <p class="lead">Aš esu <span class="typed" data-typed-items="Marketingo specialistas, Jaunesnysis programuotojas, Verslo operacijų analitikas, Automatizavimo entuziastas"></span></p>
-                <p class="description">Padedu idėjoms virsti apčiuopiamais rezultatais, jungdamas verslo poreikius, automatizaciją ir aiškų dizainą. Mano tikslas – kad jūsų vizija taptų realybe.</p>
+                <h1>Port<span class="accent-text" data-i18n="hero.title">folio</span></h1>
+                <h2 data-i18n="hero.name">Donatas Paulauskas</h2>
+                <p class="lead"><span data-i18n="hero.intro">Aš esu</span> <span class="typed"></span>
+                </p>
+                <p class="description" data-i18n="hero.description">Padedu idėjoms virsti apčiuopiamais rezultatais,
+                  jungdamas verslo poreikius,
+                  automatizaciją ir aiškų dizainą. Mano tikslas – kad jūsų vizija taptų realybe.</p>
 
                 <div class="hero-actions">
-                  <a href="#portfolio" class="btn btn-primary">Mano Darbai</a>
-                  <a href="#contact" class="btn btn-outline">Susisiekime</a>
+                  <a href="#portfolio" class="btn btn-primary" data-i18n="hero.myWork">Mano Darbai</a>
+                  <a href="#contact" class="btn btn-outline" data-i18n="hero.contact">Susisiekime</a>
                 </div>
 
                 <div class="social-links">
@@ -113,6 +127,290 @@
       </div>
 
     </section><!-- /Hero Section -->
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="services.title">Paslaugos</h2>
+        <p data-i18n="services.subtitle">Per daug nuobodžių užduočių? Mes paversime jas robotų problema, ne jūsų</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="service-header">
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-md-12">
+              <div class="service-intro">
+                <h2 class="service-heading">
+                  <div data-i18n="services.heading1">Išmanus Verslas</div>
+                  <div><span data-i18n="services.heading2">Optimizavimo Sprendimai</span></div>
+                </h2>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <div class="service-summary">
+                <p data-i18n="services.intro">
+                  Kuriame sistemas, kurios išlaisvina žmonių laiką ir leidžia sutelkti dėmesį į tai, kas svarbiausia.
+                </p>
+                <a href="services.html" class="service-btn">
+                  <span data-i18n="services.viewAll">Žiūrėti Visas Paslaugas</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card position-relative z-1">
+              <div class="service-icon">
+                <i class="bi bi-palette"></i>
+              </div>
+              <a href="service-details.html"
+                class="card-action d-flex align-items-center justify-content-center rounded-circle">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <h3>
+                <a href="service-details.html">
+                  <span data-i18n="services.automation">Procesų Automatizavimas</span>
+                </a>
+              </h3>
+              <p data-i18n="services.automationDesc">
+                Automatizuojami verslo procesai naudojant Make.com, siekiant efektyvumo ir mažesnių veiklos sąnaudų.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card position-relative z-1">
+              <div class="service-icon">
+                <i class="bi bi-gem"></i>
+              </div>
+              <a href="service-details.html"
+                class="card-action d-flex align-items-center justify-content-center rounded-circle">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <h3>
+                <a href="service-details.html">
+                  <span data-i18n="services.webDev">Tinklalapių Kūrimas</span>
+                </a>
+              </h3>
+              <p data-i18n="services.webDevDesc">
+                Kuriami modernūs, funkcionalūs ir vartotojui patogūs tinklalapiai, pritaikyti verslo poreikiams.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card position-relative z-1">
+              <div class="service-icon">
+                <i class="bi bi-megaphone"></i>
+              </div>
+              <a href="service-details.html"
+                class="card-action d-flex align-items-center justify-content-center rounded-circle">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <h3>
+                <a href="service-details.html">
+                  <span data-i18n="services.crm">CRM Sprendimai</span>
+                </a>
+              </h3>
+              <p data-i18n="services.crmDesc">
+                Diegiamos ir pritaikomos CRM sistemos klientų duomenų valdymui ir verslo procesų optimizavimui.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card position-relative z-1">
+              <div class="service-icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <a href="service-details.html"
+                class="card-action d-flex align-items-center justify-content-center rounded-circle">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <h3>
+                <a href="service-details.html">
+                  <span data-i18n="services.marketing">Rinkodaros Strategijos</span>
+                </a>
+              </h3>
+              <p data-i18n="services.marketingDesc">
+                Planuojamos ir įgyvendinamos skaitmeninės kampanijos, orientuotos į auditorijos augimą ir konversijas.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card position-relative z-1">
+              <div class="service-icon">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <a href="service-details.html"
+                class="card-action d-flex align-items-center justify-content-center rounded-circle">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <h3>
+                <a href="service-details.html">
+                  <span data-i18n="services.integration">Sistemų Integravimas</span>
+                </a>
+              </h3>
+              <p data-i18n="services.integrationDesc">
+                Sujungiami skirtingi įrankiai ir platformos į vientisą sistemą, užtikrinant sklandų duomenų srautą.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card position-relative z-1">
+              <div class="service-icon">
+                <i class="bi bi-camera-video"></i>
+              </div>
+              <a href="service-details.html"
+                class="card-action d-flex align-items-center justify-content-center rounded-circle">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <h3>
+                <a href="service-details.html">
+                  <span data-i18n="services.dataAnalysis">Duomenų Analizė</span>
+                </a>
+              </h3>
+              <p data-i18n="services.dataAnalysisDesc">
+                Vizualizuojami ir interpretuojami duomenys, siekiant pagrįstų sprendimų ir veiklos optimizavimo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="portfolio.title">Portfolio</h2>
+        <p data-i18n="portfolio.subtitle">Projektai, kuriuos realizuoju, sukurti taip, kad būtų praktiški ir efektyvūs.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <div class="filters-wrapper" data-aos="fade-up" data-aos-delay="150">
+            <ul class="portfolio-filters isotope-filters">
+              <li data-filter="*" class="filter-active" data-i18n="portfolio.allProjects">Visi Projektai</li>
+              <li data-filter=".filter-automatizacija" data-i18n="portfolio.automation">Automatizacijos ir AI</li>
+              <li data-filter=".filter-tinklai" data-i18n="portfolio.socialMedia">Soc Tinklai</li>
+              <li data-filter=".filter-procesai" data-i18n="portfolio.businessProcess">Verslo Procesai</li>
+              <li data-filter=".filter-UI" data-i18n="portfolio.uiux">UI ir UX</li>
+            </ul>
+          </div>
+
+          <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automatizacija">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/porfolio-auto-emails.webp" class="img-fluid" alt="Portfolio Image"
+                  loading="lazy">
+                <div class="portfolio-info">
+                  <div class="content">
+                    <span class="category">automatizacija</span>
+                    <h4>Auto Email</h4>
+                    <div class="portfolio-links">
+                      <a href="portfolio-auto-emails.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-tinklai">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/porfolio-video-generator.webp" class="img-fluid" alt="Portfolio Image"
+                  loading="lazy">
+                <div class="portfolio-info">
+                  <div class="content">
+                    <span class="category">Socialiniai tinklai</span>
+                    <h4>AI Video/Short Generator</h4>
+                    <div class="portfolio-links">
+                      <a href="portfolio-video-generator.html" title="More Details"><i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-tinklai">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/porfolio-auto-captions.webp" class="img-fluid" alt="Portfolio Image"
+                  loading="lazy">
+                <div class="portfolio-info">
+                  <div class="content">
+                    <span class="category">Socialiniai tinklai</span>
+                    <h4>Auto Caption, Scheduling, Posting</h4>
+                    <div class="portfolio-links">
+                      <a href="portfolio-auto-captions.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-procesai">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/porfolio-auto-CRM.webp" class="img-fluid" alt="Portfolio Image"
+                  loading="lazy">
+                <div class="portfolio-info">
+                  <div class="content">
+                    <span class="category">Verlso procesai</span>
+                    <h4>CRM Auto Populator</h4>
+                    <div class="portfolio-links">
+                      <a href="portfolio-auto-CRM.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-UI">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/porfolio-website.webp" class="img-fluid" alt="Portfolio Image"
+                  loading="lazy">
+                <div class="portfolio-info">
+                  <div class="content">
+                    <span class="category">UI ir UX</span>
+                    <h4>Portfolio Website</h4>
+                    <div class="portfolio-links">
+                      <a href="portfolio-website.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-UI">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/porfolio-testimonial-generator.webp" class="img-fluid"
+                  alt="Portfolio Image" loading="lazy">
+                <div class="portfolio-info">
+                  <div class="content">
+                    <span class="category">UI ir UX</span>
+                    <h4>Portfolio/ Testimonial Generator</h4>
+                    <div class="portfolio-links">
+                      <a href="portfolio-testimonial-generator.html" title="More Details"><i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+          </div><!-- End Portfolio Container -->
+        </div><!-- /isotope-layout -->
+      </div><!-- /container -->
+
+    </section><!-- /Portfolio Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -133,7 +431,7 @@
 
               <div class="profile-content">
                 <h3>Donatas Paulauskas</h3>
-                <p class="profession">Automatizavimo Specialistas &amp; Sistemų Kūrėjas</p>
+                <p class="profession" data-i18n="about.profession">Automatizavimo Specialistas &amp; Sistemų Kūrėjas</p>
 
                 <div class="contact-links">
                   <a href="mailto:don.paulauskas@gmail.com" class="contact-item">
@@ -156,62 +454,69 @@
           <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
             <div class="about-content">
               <div class="section-header">
-                <span class="badge-text">Apie Mane</span>
-                <h2>Padedu Žmonėms Atsikratyti Monotoniškumo</h2>
+                <span class="badge-text" data-i18n="about.badge">Apie Mane</span>
+                <h2 data-i18n="about.title">Padedu Žmonėms Atsikratyti Monotoniškumo</h2>
               </div>
 
               <div class="description">
-                <p>Vien dėl to, kad procesas „kažkaip veikia“, dar nereiškia, kad tai geriausias sprendimas. Dauguma įmonių net nesuvokia, kiek jų operacijos gali būti supaprastintos ir kiek laiko jos praranda dėl pasikartojančių užduočių.</p>
+                <p data-i18n="about.description1">Vien dėl to, kad procesas „kažkaip veikia", dar nereiškia, kad tai
+                  geriausias sprendimas. Dauguma
+                  įmonių net nesuvokia, kiek jų operacijos gali būti supaprastintos ir kiek laiko jos praranda dėl
+                  pasikartojančių užduočių.</p>
 
-                <p>Todėl kuriu automatizacijas, kurios perima pasikartojančius darbus, taupo laiką ir leidžia žmonėms susitelkti į svarbesnius dalykus.</p>
+                <p data-i18n="about.description2">Todėl kuriu automatizacijas, kurios perima pasikartojančius darbus,
+                  taupo laiką ir leidžia žmonėms
+                  susitelkti į svarbesnius dalykus.</p>
               </div>
 
               <div class="stats-grid">
                 <div class="stat-item">
                   <div class="stat-number">10+</div>
-                  <div class="stat-label">Pabaigtų Projektų</div>
+                  <div class="stat-label" data-i18n="about.projects">Pabaigtų Projektų</div>
                 </div>
                 <div class="stat-item">
                   <div class="stat-number">1+</div>
-                  <div class="stat-label">Metų Patirties</div>
+                  <div class="stat-label" data-i18n="about.experience">Metų Patirties</div>
                 </div>
                 <div class="stat-item">
                   <div class="stat-number">98%</div>
-                  <div class="stat-label">Klientų Aptarnavimo Kokybė</div>
+                  <div class="stat-label" data-i18n="about.quality">Klientų Aptarnavimo Kokybė</div>
                 </div>
               </div>
 
               <div class="details-grid">
                 <div class="detail-row">
                   <div class="detail-item">
-                    <span class="detail-label">Specializacija</span>
-                    <span class="detail-value">No-code Programų Kūrėjas &amp; Konsultantas</span>
+                    <span class="detail-label" data-i18n="about.specialization">Specializacija</span>
+                    <span class="detail-value" data-i18n="about.specializationValue">No-code Programų Kūrėjas &amp;
+                      Konsultantas</span>
                   </div>
                   <div class="detail-item">
-                    <span class="detail-label">Patirties Lygis</span>
-                    <span class="detail-value">Jaunesnysis Specialistas</span>
+                    <span class="detail-label" data-i18n="about.level">Patirties Lygis</span>
+                    <span class="detail-value" data-i18n="about.levelValue">Jaunesnysis Specialistas</span>
                   </div>
                 </div>
                 <div class="detail-row">
                   <div class="detail-item">
-                    <span class="detail-label">Išsilavinimas</span>
-                    <span class="detail-value">Verslo Administravimas</span>
+                    <span class="detail-label" data-i18n="about.education">Išsilavinimas</span>
+                    <span class="detail-value" data-i18n="about.educationValue">Verslo Administravimas</span>
                   </div>
                   <div class="detail-item">
-                    <span class="detail-label">Kalbos</span>
-                    <span class="detail-value">Lietuvių, Anglų</span>
+                    <span class="detail-label" data-i18n="about.languages">Kalbos</span>
+                    <span class="detail-value" data-i18n="about.languagesValue">Lietuvių, Anglų</span>
                   </div>
                 </div>
               </div>
 
               <div class="cta-section">
-                <a href="https://drive.google.com/drive/folders/1P8uOni7oKtSDI0kj3rCFPhguP-sYuNmw?usp=sharing" class="btn btn-primary">
+                <a href="https://drive.google.com/drive/folders/1P8uOni7oKtSDI0kj3rCFPhguP-sYuNmw?usp=sharing"
+                  class="btn btn-primary">
                   <i class="bi bi-download"></i>
-                  Atsisiųsti CV
+                  <span data-i18n="about.downloadCV">Atsisiųsti CV</span>
                 </a>
                 <a href="https://beproblem.lt/#contact" class="btn btn-outline">
                   <i class="bi bi-chat-dots"></i>
-                  Susisieksime 
+                  <span data-i18n="about.letsTalk">Susisieksime</span>
                 </a>
               </div>
             </div>
@@ -234,32 +539,36 @@
                 <div class="icon-wrapper">
                   <i class="bi bi-emoji-smile"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Patenkinti Klientai</p>
+                <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p data-i18n="stats.clients">Patenkinti Klientai</p>
               </div><!-- End Stats Item -->
 
               <div class="stats-item" data-aos="zoom-in" data-aos-delay="200">
                 <div class="icon-wrapper">
                   <i class="bi bi-journal-richtext"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Įgyvendinti Projektai</p>
+                <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p data-i18n="stats.projects">Įgyvendinti Projektai</p>
               </div><!-- End Stats Item -->
 
               <div class="stats-item" data-aos="zoom-in" data-aos-delay="250">
                 <div class="icon-wrapper">
                   <i class="bi bi-person-workspace"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="614" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Valandų Mokymuisi ir Praktikai</p>
+                <span data-purecounter-start="0" data-purecounter-end="614" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p data-i18n="stats.hours">Valandų Mokymuisi ir Praktikai</p>
               </div><!-- End Stats Item -->
 
               <div class="stats-item" data-aos="zoom-in" data-aos-delay="300">
                 <div class="icon-wrapper">
                   <i class="bi bi-gear"></i>
                 </div>
-                <span data-purecounter-start="0" data-purecounter-end="13" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Skirtingų Programų</p>
+                <span data-purecounter-start="0" data-purecounter-end="13" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p data-i18n="stats.tools">Skirtingų Programų</p>
               </div><!-- End Stats Item -->
             </div>
           </div>
@@ -274,8 +583,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Įgūdžiai</h2>
-        <p>Įrankiai ir žinios, leidžiančios idėjas paversti veikiančiais projektais</p>
+        <h2 data-i18n="skills.title">Įgūdžiai</h2>
+        <p data-i18n="skills.subtitle">Įrankiai ir žinios, leidžiančios idėjas paversti veikiančiais projektais</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -283,39 +592,48 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
-              <h3>Kūrybiniai ir Vizualūs Įgūdžiai</h3>
+              <h3 data-i18n="skills.creative">Kūrybiniai ir Vizualūs Įgūdžiai</h3>
               <div class="skills-animation">
                 <div class="skill-item">
                   <div class="d-flex justify-content-between align-items-center">
-                    <h4>Web Programavimas</h4>
+                    <h4 data-i18n="skills.webDev">Web Programavimas</h4>
                     <span class="skill-percentage">30%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
-                  <div class="skill-tooltip">Bazinis supratimas (HTML/CSS), kaip skaityti, kurti ir stilizuoti paprastus tinklalapius.</div>
+                  <div class="skill-tooltip" data-i18n="skills.webDevDesc">Bazinis supratimas (HTML/CSS), kaip skaityti,
+                    kurti ir stilizuoti paprastus
+                    tinklalapius.</div>
                 </div>
 
                 <div class="skill-item">
                   <div class="d-flex justify-content-between align-items-center">
-                    <h4>UX/UI pagrindai</h4>
+                    <h4 data-i18n="skills.uiux">UX/UI pagrindai</h4>
                     <span class="skill-percentage">35%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
-                  <div class="skill-tooltip">Pradinės žinios apie vartotojo patirties ir sąsajos dizaino principus (Figma & Lovable.dev). </div>
+                  <div class="skill-tooltip" data-i18n="skills.uiuxDesc">Pradinės žinios apie vartotojo patirties ir
+                    sąsajos dizaino principus
+                    (Figma & Lovable.dev). </div>
                 </div>
 
                 <div class="skill-item">
                   <div class="d-flex justify-content-between align-items-center">
-                    <h4>Marketingas</h4>
+                    <h4 data-i18n="skills.marketing">Marketingas</h4>
                     <span class="skill-percentage">70%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
-                  <div class="skill-tooltip">Rinkos analizė, duomenu interpretacija su Power BI/excel ir vizualinė kūryba su Canva/DALL·E. </div>
+                  <div class="skill-tooltip" data-i18n="skills.marketingDesc">Rinkos analizė, duomenu interpretacija su
+                    Power BI/excel ir vizualinė
+                    kūryba su Canva/DALL·E. </div>
                 </div>
               </div>
             </div><!-- End Frontend Skills -->
@@ -323,39 +641,48 @@
 
           <div class="col-lg-6">
             <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
-              <h3>Techniniai - įgūdžiai</h3>
+              <h3 data-i18n="skills.technical">Techniniai įgūdžiai</h3>
               <div class="skills-animation">
                 <div class="skill-item">
                   <div class="d-flex justify-content-between align-items-center">
-                    <h4>Automatizacija</h4>
+                    <h4 data-i18n="skills.automation">Automatizacija</h4>
                     <span class="skill-percentage">70%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
-                  <div class="skill-tooltip">Naudojant Make.com įrankius kurti sudėtingus scenarijus, jungti API ir konvertuoti duomenis.</div>
+                  <div class="skill-tooltip" data-i18n="skills.automationDesc">Naudojant Make.com įrankius kurti
+                    sudėtingus scenarijus, jungti API ir
+                    konvertuoti duomenis.</div>
                 </div>
 
                 <div class="skill-item">
                   <div class="d-flex justify-content-between align-items-center">
-                    <h4>Python</h4>
+                    <h4 data-i18n="skills.python">Python</h4>
                     <span class="skill-percentage">20%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
-                  <div class="skill-tooltip">Gebėjimas skaityti ir suprasti paprastą kodą, pradinės žinios apie programavimo logiką.</div>
+                  <div class="skill-tooltip" data-i18n="skills.pythonDesc">Gebėjimas skaityti ir suprasti paprastą kodą,
+                    pradinės žinios apie
+                    programavimo logiką.</div>
                 </div>
 
                 <div class="skill-item">
                   <div class="d-flex justify-content-between align-items-center">
-                    <h4>CRM</h4>
+                    <h4 data-i18n="skills.crm">CRM</h4>
                     <span class="skill-percentage">40%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
-                  <div class="skill-tooltip">Kurti duomenų bazes pagal klientų verslo procesus ir valdyti informaciją.</div>
+                  <div class="skill-tooltip" data-i18n="skills.crmDesc">Kurti duomenų bazes pagal klientų verslo
+                    procesus ir valdyti informaciją.
+                  </div>
                 </div>
               </div>
             </div><!-- End Backend Skills -->
@@ -371,8 +698,11 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>CV</h2>
-        <p>Siekiu karjeros automatizuotų sprendimų srityje, nes tikiu, kad technologijos gali išlaisvinti žmonių laiką ir energiją svarbiausiems darbams. Mano tikslas – padėti įmonėms veikti efektyviau, o ateityje gilinti žinias dirbtinio intelekto ir robotikos srityse.</p>
+        <h2 data-i18n="resume.title">CV</h2>
+        <p data-i18n="resume.subtitle">Siekiu karjeros automatizuotų sprendimų srityje, nes tikiu, kad technologijos
+          gali išlaisvinti žmonių laiką
+          ir energiją svarbiausiems darbams. Mano tikslas – padėti įmonėms veikti efektyviau, o ateityje gilinti žinias
+          dirbtinio intelekto ir robotikos srityse.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -385,56 +715,64 @@
                 <img src="assets/img/profile/profile-square-2.webp" alt="Profile" class="img-fluid rounded">
               </div>
 
-              <h3>Profesinė santrauka</h3>
-              <p>Ambicingas tarptautinio verslo absolventas, turintis praktinės patirties rinkodaros ir pardavimų srityse, strateginių įgūdžių kuriant rinkos įėjimo planus bei pažangių kompetencijų „no-code“ automatizacijoje.</p>
+              <h3 data-i18n="resume.summaryTitle">Profesinė santrauka</h3>
+              <p data-i18n="resume.summaryText">Ambicingas tarptautinio verslo absolventas, turintis praktinės patirties
+                rinkodaros ir pardavimų
+                srityse, strateginių įgūdžių kuriant rinkos įėjimo planus bei pažangių kompetencijų „no-code“
+                automatizacijoje.</p>
 
-              <h3 class="mt-4">Kontaktinė informacija</h3>
+              <h3 class="mt-4" data-i18n="resume.contactTitle">Kontaktinė informacija</h3>
               <ul class="contact-info list-unstyled">
                 <li><i class="bi bi-geo-alt"></i> Statybininkų gatvė 1, Vilnius, Lietuva</li>
                 <li><i class="bi bi-envelope"></i> don.paulauskas@gmail.com</li>
                 <li><i class="bi bi-phone"></i> +370 6 713 7273</li>
-                <li><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/donatas73a/" target="_blank">linkedin.com</a></li>
+                <li><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/donatas73a/"
+                    target="_blank">linkedin.com</a></li>
               </ul>
 
               <div class="skills-animation mt-4">
-                <h3>Techniniai Įgūdžiai</h3>
+                <h3 data-i18n="resume.technicalSkills">Techniniai Įgūdžiai</h3>
                 <div class="skill-item">
                   <div class="d-flex justify-content-between">
-                    <span>Web Programavimas</span>
+                    <span data-i18n="resume.webProgramming">Web Programavimas</span>
                     <span>30%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
                 </div>
 
                 <div class="skill-item">
                   <div class="d-flex justify-content-between">
-                    <span>UI/UX Dizainas</span>
+                    <span data-i18n="resume.uiuxDesign">UI/UX Dizainas</span>
                     <span>35%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
                 </div>
 
                 <div class="skill-item">
                   <div class="d-flex justify-content-between">
-                    <span>Make.com</span>
+                    <span data-i18n="resume.makecom">Make.com</span>
                     <span>70%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
                 </div>
 
                 <div class="skill-item">
                   <div class="d-flex justify-content-between">
-                    <span>Rinkos Analizė</span>
+                    <span data-i18n="resume.marketAnalysis">Rinkos Analizė</span>
                     <span>80%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
@@ -445,62 +783,78 @@
           <div class="col-lg-8 ps-4 ps-lg-5">
             <!-- Experience Section -->
             <div class="resume-section" data-aos="fade-up">
-              <h3><i class="bi bi-briefcase me-2"></i>Profesinė patirtis</h3>
+              <h3><i class="bi bi-briefcase me-2"></i><span data-i18n="resume.experienceTitle">Profesinė patirtis</span>
+              </h3>
 
               <div class="resume-item">
-                <h4>Rinkos Įėjimo Strategas </h4>
-                <h5>2024 - 2025</h5>
-                <p class="company"><i class="bi bi-building"></i> Cosmicnode B.V. (Eindhoven, Netherlands). </p>
+                <h4 data-i18n="resume.job1Title">Rinkos Įėjimo Strategas </h4>
+                <h5 data-i18n="resume.job1Period">2024 - 2025</h5>
+                <p class="company"><i class="bi bi-building"></i> <span data-i18n="resume.job1Company">Cosmicnode B.V.
+                    (Eindhoven, Netherlands).</span> </p>
                 <ul>
-                  <li>Sukūriau išsamią rinkos įėjimo strategiją, atlikdamas konkurencijos, reguliavimo ir kainodaros analizę.</li>
-                  <li>Pateikiau pritaikytas rinkos įėjimo taktikas ir reklamos planus, padėjusius įmonės plėtros perspektyvoms.</li>
-                  <li>Sustiprinau strateginės analizės, duomenų interpretavimo ir pristatymų suinteresuotosioms šalims gebėjimus.</li>
+                  <li data-i18n="resume.job1Task1">Sukūriau išsamią rinkos įėjimo strategiją, atlikdamas konkurencijos,
+                    reguliavimo ir kainodaros
+                    analizę.</li>
+                  <li data-i18n="resume.job1Task2">Pateikiau pritaikytas rinkos įėjimo taktikas ir reklamos planus,
+                    padėjusius įmonės plėtros
+                    perspektyvoms.</li>
+                  <li data-i18n="resume.job1Task3">Sustiprinau strateginės analizės, duomenų interpretavimo ir
+                    pristatymų suinteresuotosioms šalims
+                    gebėjimus.</li>
                 </ul>
               </div>
 
               <div class="resume-item">
-                <h4>Marketingo ir Pardavimų Praktikantas</h4>
-                <h5>2022 - 2023</h5>
-                <p class="company"><i class="bi bi-building"></i>  Flexi-Force B.V. (Barneveld, Netherlands). </p>
+                <h4 data-i18n="resume.job2Title">Marketingo ir Pardavimų Praktikantas</h4>
+                <h5 data-i18n="resume.job2Period">2022 - 2023</h5>
+                <p class="company"><i class="bi bi-building"></i> <span data-i18n="resume.job2Company">Flexi-Force B.V.
+                    (Barneveld, Netherlands).</span> </p>
                 <ul>
-                  <li>Koordinavau socialinės žiniasklaidos strategijas ir projektinius darbus, didinau skaitmeninį matomumą bei įsitraukimą.</li>
-                  <li>Patobulinau CRM darbo procesus, pagerindamas tarpdepartamentinę komunikaciją.</li>
-                  <li>Įgijau praktinės patirties rinkodaros, pardavimų ir klientų valdymo srityse.</li>
+                  <li data-i18n="resume.job2Task1">Koordinavau socialinės žiniasklaidos strategijas ir projektinius
+                    darbus, didinau skaitmeninį
+                    matomumą bei įsitraukimą.</li>
+                  <li data-i18n="resume.job2Task2">Patobulinau CRM darbo procesus, pagerindamas tarpdepartamentinę
+                    komunikaciją.</li>
+                  <li data-i18n="resume.job2Task3">Įgijau praktinės patirties rinkodaros, pardavimų ir klientų valdymo
+                    srityse.</li>
                 </ul>
               </div>
             </div>
 
             <!-- Education Section -->
             <div class="resume-section" data-aos="fade-up" data-aos-delay="100">
-              <h3><i class="bi bi-mortarboard me-2"></i>Išsilavinimas</h3>
+              <h3><i class="bi bi-mortarboard me-2"></i><span data-i18n="resume.educationTitle">Išsilavinimas</span>
+              </h3>
 
               <div class="resume-item">
-                <h4>Verslo Administracijos Bakalauras</h4>
-                <h5>2020 - 2025</h5>
-                <p class="company"><i class="bi bi-building"></i> „Fontys“ University of Applied Sciences</p>
-                <p>Specializacija konsultavime ir verslo augimo strategijose.</p>
+                <h4 data-i18n="resume.edu1Title">Verslo Administracijos Bakalauras</h4>
+                <h5 data-i18n="resume.edu1Period">2020 - 2025</h5>
+                <p class="company"><i class="bi bi-building"></i> <span data-i18n="resume.edu1School">„Fontys"
+                    University of Applied Sciences</span></p>
+                <p data-i18n="resume.edu1Description">Specializacija konsultavime ir verslo augimo strategijose.</p>
               </div>
 
               <div class="resume-item">
-                <h4>Vidurinis išsilavinimas</h4>
-                <h5>2014- 2018</h5>
-                <p class="company"><i class="bi bi-building"></i> „Juozo Miltinio“ Gimanzija </p>
-                <p>Matematika, Fizika, Anglų kalba.</p>
+                <h4 data-i18n="resume.edu2Title">Vidurinis išsilavinimas</h4>
+                <h5 data-i18n="resume.edu2Period">2014- 2018</h5>
+                <p class="company"><i class="bi bi-building"></i> <span data-i18n="resume.edu2School">„Juozo Miltinio"
+                    Gimanzija</span> </p>
+                <p data-i18n="resume.edu2Description">Matematika, Fizika, Anglų kalba.</p>
               </div>
             </div>
 
             <!-- Certifications Section -->
             <div class="resume-section" data-aos="fade-up" data-aos-delay="200">
-              <h3><i class="bi bi-award me-2"></i>Sertifikatai </h3>
+              <h3><i class="bi bi-award me-2"></i><span data-i18n="resume.certificationsTitle">Sertifikatai</span> </h3>
 
               <div class="resume-item">
-                <h4>Make.com Advanced Badge</h4>
-                <h5>2025</h5>
+                <h4 data-i18n="resume.cert1Title">Make.com Advanced Badge</h4>
+                <h5 data-i18n="resume.cert1Year">2025</h5>
               </div>
 
               <div class="resume-item">
-                <h4>Google Digital Garage</h4>
-                <h5>2021</h5>
+                <h4 data-i18n="resume.cert2Title">Google Digital Garage</h4>
+                <h5 data-i18n="resume.cert2Year">2021</h5>
               </div>
             </div>
           </div>
@@ -510,358 +864,62 @@
 
     </section><!-- /Resume Section -->
 
-     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Projektai, kuriuos realizuoju, sukurti taip, kad būtų praktiški ir efektyvūs.</p>
-      </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <div class="row">
-            <div class="col-lg-3 filter-sidebar">
-              <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
-                <ul class="portfolio-filters isotope-filters">
-                  <li data-filter="*" class="filter-active">Visi Projektai</li>
-                  <li data-filter=".filter-automatizacija">Automatizacijos ir AI</li>
-                  <li data-filter=".filter-tinklai">Soc Tinklai</li>
-                  <li data-filter=".filter-procesai">Verslo Procesai</li>
-                  <li data-filter=".filter-UI">UI ir UX</li>                  
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-lg-9">
-              <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-automatizacija">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/porfolio-auto-emails.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">automatizacija</span>
-                        <h4>Auto Email</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/porfolio-auto-emails.webp" class="glightbox" title="Capturing Moments"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-auto-emails.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-tinklai">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/porfolio-video-generator.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Socialiniai tinklai</span>
-                        <h4>AI Video/Short Generator</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/porfolio-video-generator.webp" class="glightbox" title="Woodcraft Design"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-video-generator.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-tinklai">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/porfolio-auto-captions.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Socialiniai tinklai</span>
-                        <h4>Auto Caption, Scheduling, Posting</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/porfolio-auto-captions.webp" class="glightbox" title="Classic Beauty"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-auto-captions.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-                
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-procesai">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/porfolio-auto-CRM.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Verlso procesai</span>
-                        <h4>CRM Auto Populator</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/porfolio-auto-CRM.webp" class="glightbox" title="Natural Growth"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-auto-CRM.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-UI">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/porfolio-website.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">UI ir UX</span>
-                        <h4>Portfolio Website</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/porfolio-website.webp" class="glightbox" title="Urban Stories"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-website.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-                
-                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-UI">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/porfolio-testimonial-generator.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">UI ir UX</span>
-                        <h4>Portfolio/ Testimonial Generator</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/porfolio-testimonial-generator.webp" class="glightbox" title="Digital Experience"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-testimonial-generator.html" title="More Details"><i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <!-- <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-UI">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/porfolio-testimonial-generator.webp" class="img-fluid" alt="Portfolio Image" loading="lazy">
-                    <div class="portfolio-info">
-                      <div class="content">
-                        <span class="category">Portfolio Details</span>
-                        <h4>Portfolio Details</h4>
-                        <div class="portfolio-links">
-                          <a href="assets/img/portfolio/porfolio-testimonial-generator.webp" class="glightbox" title="Digital Experience"><i class="bi bi-plus-lg"></i></a>
-                          <a href="portfolio-details.html" title="More Details"><i class="bi bi-arrow-right"></i></a> -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- End Portfolio Item -->
-                
-              </div><!-- End Portfolio Container -->
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Paslaugoss</h2>
-        <p>Per daug nuobodžių užduočių? Mes paversime jas robotų problema, ne jūsų</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="service-header">
-          <div class="row align-items-center">
-            <div class="col-lg-8 col-md-12">
-              <div class="service-intro">
-                <h2 class="service-heading">
-                  <div>Išmanus Verslas</div>
-                  <div><span>Optimizavimo Sprendimai</span></div>
-                </h2>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-              <div class="service-summary">
-                <p>
-                  Kuriame sistemas, kurios išlaisvina žmonių laiką ir leidžia sutelkti dėmesį į tai, kas svarbiausia.
-                </p>
-                <a href="services.html" class="service-btn">
-                  Žiūrėti Visas Paslaugas 
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-palette"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  Procesų  <span>Automatizavimas</span>
-                </a>
-              </h3>
-              <p>
-                Automatizuojami verslo procesai naudojant Make.com, siekiant efektyvumo ir mažesnių veiklos sąnaudų.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-gem"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  Tinklalapių  <span>Kūrimas</span>
-                </a>
-              </h3>
-              <p>
-                Kuriami modernūs, funkcionalūs ir vartotojui patogūs tinklalapiai, pritaikyti verslo poreikiams.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-megaphone"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  CRM <span>Sprendimai</span>
-                </a>
-              </h3>
-              <p>
-                Diegiamos ir pritaikomos CRM sistemos klientų duomenų valdymui ir verslo procesų optimizavimui.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-code-slash"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  Rinkodaros <span>Strategijos</span>
-                </a>
-              </h3>
-              <p>
-                Planuojamos ir įgyvendinamos skaitmeninės kampanijos, orientuotos į auditorijos augimą ir konversijas.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-graph-up"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  Sistemų <span>Integravimas</span>
-                </a>
-              </h3>
-              <p>
-                Sujungiami skirtingi įrankiai ir platformos į vientisą sistemą, užtikrinant sklandų duomenų srautą.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-camera-video"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  Duomenų <span>Analizė</span>
-                </a>
-              </h3>
-              <p>
-                Vizualizuojami ir interpretuojami duomenys, siekiant pagrįstų sprendimų ir veiklos optimizavimo.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
 
     <!-- Testimonials Section -->
-        <section id="stats" class="stats section light-background">
-          
-<!-- Section Title -->
+    <section id="stats" class="stats section light-background testimonials">
+
+      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
-        <h2>Rekomendacijos</h2>
-        <div><span>Pažiūrėkite mano</span> <span class="description-title">Atsiliepimus</span></div>
+        <h2 data-i18n="testimonials.title">Rekomendacijos</h2>
+        <div><span data-i18n="testimonials.subtitle">Pažiūrėkite mano</span> <span class="description-title"
+            data-i18n="testimonials.reviews">Atsiliepimus</span></div>
       </div>
-<!-- End Section Title -->
+      <!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="swiper init-swiper" data-speed="600" data-delay="5000">
+        <div class="swiper init-swiper testimonial-swiper" data-speed="650" data-delay="5000">
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
-              "speed": 600,
+              "speed": 650,
+              "grabCursor": true,
+              "centeredSlides": true,
+              "slidesPerView": 1.2,
+              "spaceBetween": 12,
+              "keyboard": { "enabled": true, "onlyInViewport": true },
               "autoplay": {
-                "delay": 5000
+                "delay": 5000,
+                "disableOnInteraction": false,
+                "pauseOnMouseEnter": true
               },
-              "slidesPerView": "auto",
-              "centeredSlides": true,            
               "pagination": {
                 "el": ".swiper-pagination",
                 "type": "bullets",
                 "clickable": true
               },
               "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 20
-                }
+                "320": { "slidesPerView": 1, "spaceBetween": 10 },
+                "768": { "slidesPerView": 1.6, "spaceBetween": 14 },
+                "1200": { "slidesPerView": 2.2, "spaceBetween": 18 }
               }
             }
           </script>
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
-              <div class="testimonial-item" "="">
-            <p>
-              <i class=" bi bi-quote quote-icon-left"></i>
-                <span>Jis greitai suprato mūsų poreikius ir pasiūlė sprendimus, kurie ne tik atrodė puikiai, bet ir veikė be priekaištų.</span>
-                <i class="bi bi-quote quote-icon-right"></i>
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span data-i18n="testimonials.t1.text">Jis greitai suprato mūsų poreikius ir pasiūlė sprendimus, kurie
+                    ne tik atrodė puikiai, bet ir veikė be priekaištų.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/profile/profile-agne.webp" class="testimonial-img" alt="">
                 <h3>Agnė Petrauskaitė</h3>
-                <h4>Rinkodaros vadovė</h4>
+                <h4 data-i18n="testimonials.t1.role">Rinkodaros vadovė</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -869,12 +927,13 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Darbas su Donatu buvo sklandus nuo pirmos dienos. Jis ne tik įgyvendino mūsų idėjas, bet ir pasiūlė geresnių.</span>
+                  <span data-i18n="testimonials.t2.text">Darbas su Donatu buvo sklandus nuo pirmos dienos. Jis ne tik
+                    įgyvendino mūsų idėjas, bet ir pasiūlė geresnių.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/profile/profile-tomas.webp" class="testimonial-img" alt="">
                 <h3>Tomas Jankauskas</h3>
-                <h4>Verslo plėtros vadovas</h4>
+                <h4 data-i18n="testimonials.t2.role">Verslo plėtros vadovas</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -882,12 +941,13 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Mums reikėjo greito sprendimo, ir Donatas tai padarė per kelias dienas. Efektyvu, aišku ir kokybiška.</span>
+                  <span data-i18n="testimonials.t3.text">Mums reikėjo greito sprendimo, ir Donatas tai padarė per kelias
+                    dienas. Efektyvu, aišku ir kokybiška.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/profile/profile-marius.webp" class="testimonial-img" alt="">
                 <h3>Marius Stankevičius</h3>
-                <h4>IT vadovas</h4>
+                <h4 data-i18n="testimonials.t3.role">IT vadovas</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -895,12 +955,13 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Donatas sujungė techninį tikslumą su kūrybišku požiūriu. Rezultatas – profesionalus ir funkcionalus sprendimas.</span>
+                  <span data-i18n="testimonials.t4.text">Donatas sujungė techninį tikslumą su kūrybišku požiūriu.
+                    Rezultatas – profesionalus ir funkcionalus sprendimas.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/profile/profile-egle.webp" class="testimonial-img" alt="">
                 <h3>Eglė Žukaitė</h3>
-                <h4>Projektų koordinatorė</h4>
+                <h4 data-i18n="testimonials.t4.role">Projektų koordinatorė</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -908,12 +969,13 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Donatas puikiai išmano automatizacijas ir padėjo mums sutaupyti daug laiko kasdieniuose procesuose.</span>
+                  <span data-i18n="testimonials.t5.text">Donatas puikiai išmano automatizacijas ir padėjo mums sutaupyti
+                    daug laiko kasdieniuose procesuose.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/profile/profile-laura.webp" class="testimonial-img" alt="">
                 <h3>Laura Rimkutė</h3>
-                <h4>Klientų aptarnavimo vadovė</h4>
+                <h4 data-i18n="testimonials.t5.role">Klientų aptarnavimo vadovė</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -921,39 +983,41 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Jo gebėjimas pritaikyti dizainą pagal mūsų prekės ženklą – išskirtinis. Viskas atrodo vientisa ir profesionalu.</span>
+                  <span data-i18n="testimonials.t6.text">Jo gebėjimas pritaikyti dizainą pagal mūsų prekės ženklą –
+                    išskirtinis. Viskas atrodo vientisa ir profesionalu.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/profile/profile-justinas.webp" class="testimonial-img" alt="">
                 <h3>Justinas Paulauskas</h3>
-                <h4>Kūrybos vadovas</h4>
+                <h4 data-i18n="testimonials.t6.role">Kūrybos vadovas</h4>
               </div>
             </div><!-- End testimonial item -->
-      
+
           </div> <!-- /.swiper-wrapper -->
         </div> <!-- /.swiper -->
-      
+
         <!-- IMPORTANT: pagination must be OUTSIDE the .swiper element -->
         <div class="section-pagination-wrapper">
           <div class="swiper-pagination"></div>
         </div>
-          <!-- </div>
+        <!-- </div>
           <div class="swiper-pagination"></div> -->
-        </div>
-        </div>
       </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </section><!-- /Testimonials Section -->
+
     </div>
-  </div>
-</section><!-- /Testimonials Section -->
-      
-        </div>
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Kontaktai</h2>
-        <p>Susisiekite su mumis dėl individualių sprendimų, projektų įgyvendinimo ar bendradarbiavimo galimybių</p>
+        <h2 data-i18n="contact.title">Kontaktai</h2>
+        <p data-i18n="contact.subtitle">Susisiekite su mumis dėl individualių sprendimų, projektų įgyvendinimo ar
+          bendradarbiavimo galimybių</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -961,15 +1025,16 @@
         <div class="row g-4 g-lg-5">
           <div class="col-lg-5">
             <div class="info-box">
-              <h3>Kontaktinė Informacija</h3>
-              <p>Kai reikia greito atsakymo ar tiesiog draugiško patarimo – susisiekite.</p>
+              <h3 data-i18n="contact.info">Kontaktinė Informacija</h3>
+              <p data-i18n="contact.infoText">Kai reikia greito atsakymo ar tiesiog draugiško patarimo – susisiekite.
+              </p>
 
               <div class="info-item">
                 <div class="icon-box">
                   <i class="bi bi-geo-alt"></i>
                 </div>
                 <div class="content">
-                  <h4>Mūsų adresas</h4>
+                  <h4 data-i18n="contact.address">Mūsų adresas</h4>
                   <p>Statybinių Gatvė 1</p>
                   <p>Vilnius, Lietuva</p>
                 </div>
@@ -980,7 +1045,7 @@
                   <i class="bi bi-telephone"></i>
                 </div>
                 <div class="content">
-                  <h4>Telefonas</h4>
+                  <h4 data-i18n="contact.phone">Telefonas</h4>
                   <p>+370 6 713 7273</p>
                 </div>
               </div>
@@ -990,7 +1055,7 @@
                   <i class="bi bi-envelope"></i>
                 </div>
                 <div class="content">
-                  <h4>El. Paštas</h4>
+                  <h4 data-i18n="contact.email">El. Paštas</h4>
                   <p>don.paulauskas@gmail.com</p>
                 </div>
               </div>
@@ -999,54 +1064,47 @@
 
           <div class="col-lg-7">
             <div class="contact-form">
-              <h3>Susisiekite</h3>
-              <p>Atraskime sprendimus jūsų verslui</p>
+              <h3 data-i18n="contact.formTitle">Susisiekite</h3>
+              <p data-i18n="contact.formSubtitle">Atraskime sprendimus jūsų verslui</p>
 
 
-<form id="contactForm" action="https://hook.eu2.make.com/3j1ikw5v6en68pxtan3ofsm08gs4pz35" method="post" class="php-email-form">
-  <div class="row gy-4">
-    <div class="col-md-6">
-      <input type="text" name="name" class="form-control" placeholder="Jūsų vardas" required>
-    </div>
+              <form id="contactForm" action="https://hook.eu2.make.com/3j1ikw5v6en68pxtan3ofsm08gs4pz35" method="post"
+                class="php-email-form">
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" data-i18n-placeholder="contact.name"
+                      placeholder="Jūsų vardas" required>
+                  </div>
 
-    <div class="col-md-6">
-      <input type="email" name="email" class="form-control" placeholder="Jūsų El. Paštas" required>
-    </div>
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" data-i18n-placeholder="contact.emailField"
+                      placeholder="Jūsų El. Paštas" required>
+                  </div>
 
-    <div class="col-12">
-      <input type="text" name="subject" class="form-control" placeholder="Tema" required>
-    </div>
+                  <div class="col-12">
+                    <input type="text" name="subject" class="form-control" data-i18n-placeholder="contact.subject"
+                      placeholder="Tema" required>
+                  </div>
 
-    <div class="col-12">
-      <textarea name="message" class="form-control" rows="6" placeholder="Žinutė" required></textarea>
-    </div>
+                  <div class="col-12">
+                    <textarea name="message" class="form-control" rows="6" data-i18n-placeholder="contact.message"
+                      placeholder="Žinutė" required></textarea>
+                  </div>
 
-    <div class="col-12">
-      <div class="loading" style="display:none;">Siunčiama...</div>
-      <div class="error-message" style="display:none;color:#1F1F1F;"></div>
-      <div class="sent-message" style="display:none;color:#1F1F1F;">Ačiū! Jūsų žinutė išsiųsta.</div>
-      <button type="submit" class="btn btn-primary">Siųsti</button>
-    </div>
-  </div>
-</form>
-          
+                  <div class="col-12">
+                    <div class="loading" style="display:none;" data-i18n="contact.sending">Siunčiama...</div>
+                    <div class="error-message" style="display:none;color:#1F1F1F;"></div>
+                    <div class="sent-message" style="display:none;color:#1F1F1F;" data-i18n="contact.sent">Ačiū! Jūsų
+                      žinutė išsiųsta.</div>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.send">Siųsti</button>
+                  </div>
+                </div>
+              </form>
+
             </div>
-          </form>
+            </form>
 
-        </div>
-      </div>
-
-              <!-- Calendly inline widget begin -->
-      <div style="max-width: 1200px; margin: 0 auto; padding: 32px;">
-        <h2 style="text-align: center; color: #ececec; font-size: 28px; margin-bottom: 24px;">
-          Pasirinkite jums tinkamą laiką susitikimui
-        </h2>
-          
-<!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/donatas-make-com/30min?background_color=464646&text_color=ffffff&primary_color=ececec" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
-
+          </div>
         </div>
 
       </div>
@@ -1059,21 +1117,24 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span>Visos teisės saugomos</span></p>
+        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span data-i18n="footer.rights">Visos
+            teisės saugomos</span></p>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        <a href="https://beproblem.lt/">Kuriame sprendimus, kurie palengvina jūsų kasdienybę</a>
+        <a href="https://beproblem.lt/" data-i18n="footer.tagline">Kuriame sprendimus, kurie palengvina jūsų
+          kasdienybę</a>
       </div>
     </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -1089,6 +1150,9 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- i18n Script -->
+  <script src="assets/js/i18n.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>

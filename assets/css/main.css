@@ -12,29 +12,46 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Ubuntu",  sans-serif;
-  --nav-font: "Nunito",  sans-serif;
+  /* Body text */
+  --default-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Headings */
+  --heading-font: "Inter", sans-serif;
+  /* Navigation */
+  --nav-font: "Nunito", sans-serif;
+  /* Accent (section titles) */
+  --accent-font: "Montserrat", "Nunito", system-ui, sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #1f1f1f; /* Background color for the entire website, including individual sections */
-  --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ececec; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #232323; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #310606; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #1f1f1f;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #ffffff;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #ffffff;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #ececec;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #232323;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #310606;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: rgba(236, 236, 236, 0.59);  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #393939; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #393939; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ececec; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: rgba(236, 236, 236, 0.59);
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #393939;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #393939;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #ffffff;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ececec;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -186,6 +203,80 @@ h6 {
 .header .social-links a:hover {
   color: var(--contrast-color);
   background: var(--accent-color);
+}
+
+/* Language Switcher Styles */
+.header .language-switcher {
+  margin: 20px 0 10px 0;
+  padding: 10px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.header .language-switcher .lang-btn {
+  background: none;
+  border: none;
+  color: var(--nav-color);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--nav-font);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header .language-switcher .lang-btn:hover {
+  color: var(--nav-hover-color);
+}
+
+.header .language-switcher .lang-btn.active {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.header .language-switcher .separator {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  margin: 0 5px;
+  user-select: none;
+}
+
+/* Language Switch Animations */
+@keyframes fadeFlipOut {
+  0% {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+}
+
+@keyframes fadeFlipIn {
+  0% {
+    opacity: 0;
+    transform: perspective(400px) rotateX(-90deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+.lang-switching-out {
+  animation: fadeFlipOut 0.3s ease-out forwards;
+}
+
+.lang-switching-in {
+  animation: fadeFlipIn 0.3s ease-out forwards;
+}
+
+/* Smooth transition for all translatable elements */
+[data-i18n] {
+  transition: opacity 0.2s ease;
 }
 
 @media (min-width: 1200px) {
@@ -513,6 +604,7 @@ section,
   font-size: 32px;
   font-weight: 700;
   position: relative;
+  font-family: var(--accent-font);
 }
 
 .section-title h2:before,
@@ -1515,23 +1607,10 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-@media (max-width: 991px) {
-  .portfolio .filter-sidebar {
-    margin-bottom: 30px;
-  }
-}
-
 .portfolio .filters-wrapper {
-  background-color: color-mix(in srgb, var(--surface-color), var(--default-color) 3%);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-}
-
-@media (max-width: 991px) {
-  .portfolio .filters-wrapper {
-    padding: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .portfolio .portfolio-filters {
@@ -1539,50 +1618,34 @@ section,
   margin: 0;
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
-}
-
-@media (max-width: 991px) {
-  .portfolio .portfolio-filters {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }
 
 .portfolio .portfolio-filters li {
   cursor: pointer;
-  padding: 12px 20px;
+  padding: 10px 18px;
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
   color: var(--default-color);
-  transition: all 0.3s ease-in-out;
-  border-radius: 6px;
-  background: transparent;
-  position: relative;
-  border-left: 3px solid transparent;
-}
-
-@media (max-width: 991px) {
-  .portfolio .portfolio-filters li {
-    padding: 8px 16px;
-    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
-    border-left-width: 3px;
-  }
+  transition: all 0.25s ease-in-out;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  background: color-mix(in srgb, var(--surface-color), transparent 0%);
 }
 
 .portfolio .portfolio-filters li:hover {
   color: var(--accent-color);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 40%);
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  border-left-color: color-mix(in srgb, var(--accent-color), transparent 50%);
 }
 
 .portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  border-left-color: var(--accent-color);
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
   font-weight: 600;
 }
 
@@ -1593,31 +1656,29 @@ section,
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio .portfolio-wrap img {
-  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), filter 0.4s ease;
   width: 100%;
   height: 350px;
   object-fit: cover;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 25px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
-  z-index: 3;
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform: translateY(20px);
-  opacity: 0;
+  position: static;
+  padding: 18px 5px 0;
+  background: transparent;
+  z-index: 1;
+  transform: none;
+  opacity: 1;
 }
 
 .portfolio .portfolio-wrap .portfolio-info .content {
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform: translateY(20px);
+  transition: color 0.3s ease;
+  transform: none;
 }
 
 .portfolio .portfolio-wrap .portfolio-info .category {
@@ -1632,32 +1693,82 @@ section,
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: var(--contrast-color);
+  color: var(--heading-color);
   font-weight: 700;
   margin-bottom: 15px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info .portfolio-links {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  left: auto;
+  transform: scale(0.9);
   display: flex;
   gap: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
 }
 
 .portfolio .portfolio-wrap .portfolio-info .portfolio-links a {
+  position: relative;
   color: var(--contrast-color);
-  width: 40px;
-  height: 40px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  background-color: var(--accent-color);
+  border: 0;
   border-radius: 50%;
-  font-size: 18px;
-  transition: 0.3s;
+  font-size: 24px;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.portfolio .portfolio-wrap .portfolio-info .portfolio-links a i {
+  transition: transform 0.25s ease;
+  transform-origin: center;
 }
 
 .portfolio .portfolio-wrap .portfolio-info .portfolio-links a:hover {
-  background-color: var(--accent-color);
-  transform: translateY(-3px);
+  background-color: color-mix(in srgb, var(--accent-color), #ffffff 20%);
+  color: var(--contrast-color);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio .portfolio-wrap .portfolio-info .portfolio-links a:hover i {
+  transform: rotate(-90deg);
+}
+
+/* Pulse ring effect on hover */
+.portfolio .portfolio-wrap .portfolio-info .portfolio-links a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.portfolio .portfolio-wrap .portfolio-info .portfolio-links a:hover::after {
+  animation: portfolio-pulse 600ms ease-out;
+}
+
+@keyframes portfolio-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(236, 236, 236, 0.45);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    box-shadow: 0 0 0 18px rgba(236, 236, 236, 0);
+    transform: scale(1.35);
+    opacity: 0;
+  }
 }
 
 .portfolio .portfolio-wrap:hover {
@@ -1666,15 +1777,22 @@ section,
 
 .portfolio .portfolio-wrap:hover img {
   transform: scale(1.08);
+  filter: brightness(0.45);
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-info {
-  transform: translateY(0);
+  transform: none;
   opacity: 1;
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-info .content {
-  transform: translateY(0);
+  transform: none;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info .portfolio-links {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
 }
 
 /*--------------------------------------------------------------
@@ -1756,6 +1874,8 @@ section,
   margin-bottom: 30px;
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 90%);
   transition: all 0.3s ease;
+  /* Allow text to wrap inside flex/grid contexts */
+  min-width: 0;
 }
 
 .services .service-card .service-icon {
@@ -1800,30 +1920,63 @@ section,
   margin-bottom: 0;
 }
 
+/* Prevent long Dutch words from overflowing containers */
+.services .service-header .service-intro .service-heading,
+.services .service-header .service-intro .service-heading div,
+.services .service-header .service-intro .service-heading span,
+.services .service-card h3,
+.services .service-card h3 a,
+.services .service-card h3 a span,
+.services .service-card p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
 .services .service-card .card-action {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 80px;
-  height: 80px;
+  top: 16px;
+  right: 16px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
+  transform: translateY(10px) scale(0.95);
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .services .service-card .card-action i {
-  font-size: 24px;
+  font-size: 26px;
   color: var(--contrast-color);
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
+  transform-origin: center;
+}
+
+.services .service-card .card-action:hover {
+  transform: translateY(0) scale(1.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
 .services .service-card .card-action:hover i {
-  transform: rotate(45deg);
+  transform: rotate(-90deg);
+}
+
+.services .service-card .card-action::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.services .service-card .card-action:hover::after {
+  animation: portfolio-pulse 600ms ease-out;
 }
 
 .services .service-card::before {
@@ -1866,7 +2019,7 @@ section,
 .services .service-card:hover .card-action {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .services .service-card:hover .service-icon i {
@@ -2637,8 +2790,9 @@ section,
 }
 
 .testimonials {
-  position: relative; /* anchor for absolute pagination */
-  background: #1A1A1A;
+  position: relative;
+  /* anchor for absolute pagination */
+  background: #1F1F1F;
   color: #fff;
   padding: 60px 0;
 }
@@ -2649,7 +2803,8 @@ section,
   top: 50%;
   transform: translateY(-50%);
   display: flex;
-  flex-direction: column; /* stacked bullets */
+  flex-direction: column;
+  /* stacked bullets */
   gap: 8px;
   margin: 0;
   z-index: 30;
@@ -2675,8 +2830,153 @@ section,
   color: #fff;
 }
 
+.testimonials .testimonial-swiper {
+  position: relative;
+  padding: 0 28px;
+}
+
+.testimonials .testimonial-swiper .swiper-wrapper {
+  overflow: visible;
+}
+
+.testimonials .testimonial-swiper .swiper-slide {
+  transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  opacity: 0.92;
+  filter: blur(0.6px);
+}
+
+.testimonials .testimonial-swiper .swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  filter: none;
+}
+
+.testimonials .testimonial-swiper .swiper-slide-next,
+.testimonials .testimonial-swiper .swiper-slide-prev {
+  transform: scale(1);
+  filter: blur(0.8px);
+}
+
+.testimonials .section-pagination-wrapper {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.testimonials .section-pagination-wrapper .swiper-pagination {
+  position: static;
+  transform: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.testimonials .section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 65%);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.14);
+  transition: all 0.25s ease;
+}
+
+.testimonials .section-pagination-wrapper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: color-mix(in srgb, var(--default-color), transparent 60%);
+  border-color: var(--accent-color);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.24);
+}
+
+.testimonials .swiper-nav {
+  position: absolute;
+  inset: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.testimonials .swiper-nav .swiper-button-prev,
+.testimonials .swiper-nav .swiper-button-next {
+  position: static !important;
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px;
+  min-height: 52px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  background: color-mix(in srgb, var(--surface-color), transparent 6%);
+  color: var(--default-color);
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer !important;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.12);
+  font-size: 18px;
+  z-index: 100;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.testimonials .swiper-nav .swiper-button-prev *,
+.testimonials .swiper-nav .swiper-button-next *,
+.testimonials .swiper-nav .swiper-button-prev::before,
+.testimonials .swiper-nav .swiper-button-next::before,
+.testimonials .swiper-nav .swiper-button-prev i::before,
+.testimonials .swiper-nav .swiper-button-next i::before {
+  pointer-events: none !important;
+}
+
+.testimonials .swiper-nav .swiper-button-prev:hover,
+.testimonials .swiper-nav .swiper-button-next:hover,
+.testimonials .swiper-nav .swiper-button-prev:focus-visible,
+.testimonials .swiper-nav .swiper-button-next:focus-visible {
+  background: color-mix(in srgb, var(--default-color), transparent 82%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 45%);
+  color: var(--accent-color);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.22);
+  outline: none;
+}
+
+.testimonials .swiper-nav .swiper-button-prev:focus-visible,
+.testimonials .swiper-nav .swiper-button-next:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+.testimonials .swiper-nav .swiper-button-prev::after,
+.testimonials .swiper-nav .swiper-button-next::after {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .testimonials .section-pagination-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .testimonials .swiper-nav {
+    inset: auto;
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: space-between;
+    pointer-events: auto;
+  }
+}
+
 .testimonial-item {
-  background: #434343;
+  background: var(--surface-color);
   padding: 30px;
   border-radius: 6px;
   position: relative;
@@ -2684,8 +2984,10 @@ section,
 }
 
 .testimonial-item p {
-  font-style: italic;
+  font-style: normal;
   margin: 20px 0;
+  font-size: calc(1rem + 2px);
+  line-height: 1.7;
 }
 
 .testimonial-img {
@@ -2704,6 +3006,7 @@ section,
   font-size: 14px;
   color: #ccc;
 }
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
@@ -2715,8 +3018,9 @@ section,
    Ensures horizontal layout, proper slide sizing and cropping.
    Append to the end of assets/css/main.css
 */
-.portfolio-details-slider { 
-  overflow: hidden !important; /* keep slides clipped inside container */
+.portfolio-details-slider {
+  overflow: hidden !important;
+  /* keep slides clipped inside container */
 }
 
 /* Make wrapper a horizontal flex track (like .swiper-wrapper) */
@@ -2744,17 +3048,23 @@ section,
 /* Images inside slides: fill and crop consistently */
 .portfolio-swiper-slide img {
   width: 100% !important;
-  height: 480px !important;      /* tweak as needed */
+  height: 480px !important;
+  /* tweak as needed */
   object-fit: cover !important;
   display: block !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-  .portfolio-swiper-slide img { height: 360px !important; }
+  .portfolio-swiper-slide img {
+    height: 360px !important;
+  }
 }
+
 @media (max-width: 576px) {
-  .portfolio-swiper-slide img { height: 220px !important; }
+  .portfolio-swiper-slide img {
+    height: 220px !important;
+  }
 }
 
 /* small nicety: center pagination under the slider */
@@ -2776,20 +3086,22 @@ section,
   height: 16px !important;
   margin: 0 6px !important;
   border-radius: 50% !important;
-  background: rgba(255,255,255,0.12) !important; /* subtle default */
+  background: rgba(255, 255, 255, 0.12) !important;
+  /* subtle default */
   opacity: 0.85 !important;
   transform: scale(1) !important;
-  transition: transform 0.22s cubic-bezier(.2,.9,.3,1), background 0.22s ease, box-shadow 0.22s ease !important;
+  transition: transform 0.22s cubic-bezier(.2, .9, .3, 1), background 0.22s ease, box-shadow 0.22s ease !important;
   box-shadow: none !important;
   border: 0 !important;
 }
 
 /* Active bullet */
 .portfolio-details-slider .portfolio-swiper-pagination .swiper-pagination-bullet-active {
-  background: #e0dede !important; /* light active color (same as testimonials) */
+  background: #e0dede !important;
+  /* light active color (same as testimonials) */
   opacity: 1 !important;
   transform: scale(1.18) !important;
-  box-shadow: 0 8px 22px rgba(224,222,222,0.24) !important;
+  box-shadow: 0 8px 22px rgba(224, 222, 222, 0.24) !important;
 }
 
 /* Ensure focus/hover states look good */
@@ -2804,8 +3116,10 @@ section,
 
 /* Ensure pagination sits below the image (at the bottom of the slider container) */
 .portfolio-details-slider {
-  position: relative;        /* anchor for absolute pagination */
-  padding-bottom: 56px;      /* reserve space for bullets below the image */
+  position: relative;
+  /* anchor for absolute pagination */
+  padding-bottom: 56px;
+  /* reserve space for bullets below the image */
 }
 
 /* Place pagination inside the slider and above the reserved padding */
@@ -2814,7 +3128,8 @@ section,
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 18px;              /* distance from the bottom of the container */
+  bottom: 18px;
+  /* distance from the bottom of the container */
   margin: 0;
   display: flex;
   justify-content: center;
@@ -2824,14 +3139,25 @@ section,
 
 /* small responsive tweaks (reduce reserved space on smaller screens) */
 @media (max-width: 992px) {
-  .portfolio-details-slider { padding-bottom: 48px; }
+  .portfolio-details-slider {
+    padding-bottom: 48px;
+  }
+
   .portfolio-details-slider .portfolio-swiper-pagination,
-  .portfolio-details-slider .swiper-pagination { bottom: 12px; }
+  .portfolio-details-slider .swiper-pagination {
+    bottom: 12px;
+  }
 }
+
 @media (max-width: 576px) {
-  .portfolio-details-slider { padding-bottom: 38px; }
+  .portfolio-details-slider {
+    padding-bottom: 38px;
+  }
+
   .portfolio-details-slider .portfolio-swiper-pagination,
-  .portfolio-details-slider .swiper-pagination { bottom: 10px; }
+  .portfolio-details-slider .swiper-pagination {
+    bottom: 10px;
+  }
 }
 
 /* --- Fix: hide pagination until initialized, but allow clicks after init even if pagination is outside .swiper --- */
@@ -2853,11 +3179,12 @@ section,
 .init-swiper.swiper-initialized .swiper-pagination,
 .portfolio-details-slider.swiper-initialized .swiper-pagination,
 .testimonials.swiper-initialized .swiper-pagination,
-.swiper.swiper-initialized ~ .swiper-pagination,
-.swiper.swiper-initialized ~ .section-pagination-wrapper .swiper-pagination,
-.section-pagination-wrapper .swiper.swiper-initialized + .swiper-pagination {
+.swiper.swiper-initialized~.swiper-pagination,
+.swiper.swiper-initialized~.section-pagination-wrapper .swiper-pagination,
+.section-pagination-wrapper .swiper.swiper-initialized+.swiper-pagination {
   /* add a small delay so the fade doesn't start instantly (adjust ms as needed) */
-  transition-delay: 0.30s; /* 120ms — increase if you still see a flicker */
+  transition-delay: 0.30s;
+  /* 120ms — increase if you still see a flicker */
   visibility: visible !important;
   opacity: 1 !important;
   pointer-events: auto !important;

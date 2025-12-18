@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,20 +46,34 @@
     <div class="header-container d-flex flex-column align-items-start">
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="https://beproblem.lt/index.html#hero"><i class="bi bi-house navicon"></i> Pradžia</a></li>
-          <li><a href="https://beproblem.lt/index.html#about"><i class="bi bi-person navicon"></i> Apie mane</a></li>
-          <li><a href="https://beproblem.lt/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> CV</a></li>
-          <li><a href="https://beproblem.lt/index.html#portfolio"><i class="bi bi-images navicon"></i> Projektai</a></li>
-          <li><a href="https://beproblem.lt/index.html#services" class="active"><i class="bi bi-hdd-stack navicon"></i> Paslaugos</a></li>
-          <li><a href="https://beproblem.lt/index.html#contact"><i class="bi bi-envelope navicon"></i> Kontaktai</a></li>
+          <li><a href="https://beproblem.lt/index.html#hero"><i class="bi bi-house navicon"></i><span
+                data-i18n="nav.home"> Pradžia</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#services" class="active"><i class="bi bi-hdd-stack navicon"></i>
+              <span data-i18n="nav.services">Paslaugos</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#portfolio"><i class="bi bi-images navicon"></i> <span
+                data-i18n="nav.portfolio">Projektai</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#about"><i class="bi bi-person navicon"></i> <span
+                data-i18n="nav.about">Apie mane</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> <span
+                data-i18n="nav.resume">CV</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#contact"><i class="bi bi-envelope navicon"></i> <span
+                data-i18n="nav.contact">Kontaktai</span></a></li>
         </ul>
       </nav>
 
       <div class="social-links text-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://github.com/Donatas333" class="github"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/donatas73a/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <div class="language-switcher text-center mt-3">
+        <button class="lang-btn" data-lang="lt" aria-label="Switch to Lithuanian">LT</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="nl" aria-label="Switch to Dutch">NL</button>
       </div>
 
     </div>
@@ -69,11 +85,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Plačiau apie Paslaugas</h1>
+        <h1 class="mb-2 mb-lg-0" data-i18n="servicePage.pageTitle">Plačiau apie Paslaugas</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Pradžia</a></li>
-            <li class="current">Plačiau apie Paslaugas</li>
+            <li><a href="index.html" data-i18n="nav.home">Pradžia</a></li>
+            <li class="current" data-i18n="servicePage.breadcrumbCurrent">Plačiau apie Paslaugas</li>
           </ol>
         </nav>
       </div>
@@ -106,7 +122,7 @@
                   }
                 }
               </script>
-            
+
               <div class="portfolio-swiper-wrapper align-items-center">
                 <div class="portfolio-swiper-slide">
                   <img src="assets/img/services/services-1.webp" alt="" class="img-fluid" loading="lazy">
@@ -122,12 +138,14 @@
             </div>
 
             <div class="content mt-5">
-              <h3>Skaitmeninio Marketingo Sprendimai</h3>
-              <p>
-                Siūlome efektyvius skaitmeninio marketingo sprendimus, padedančius verslui augti ir pasiekti tikslinę auditoriją. Kuriame strategijas, kurios remiasi duomenimis ir orientuotos į rezultatą.
+              <h3 data-i18n="servicePage.heading">Skaitmeninio Marketingo Sprendimai</h3>
+              <p data-i18n="servicePage.intro1">
+                Siūlome efektyvius skaitmeninio marketingo sprendimus, padedančius verslui augti ir pasiekti tikslinę
+                auditoriją. Kuriame strategijas, kurios remiasi duomenimis ir orientuotos į rezultatą.
               </p>
-              <p>
-                Mūsų paslaugos apima SEO, turinio kūrimą, socialinių tinklų valdymą ir el. pašto kampanijas. Dirbame tam, kad jūsų prekės ženklas būtų matomas ir konkurencingas.
+              <p data-i18n="servicePage.intro2">
+                Mūsų paslaugos apima SEO, turinio kūrimą, socialinių tinklų valdymą ir el. pašto kampanijas. Dirbame
+                tam, kad jūsų prekės ženklas būtų matomas ir konkurencingas.
               </p>
 
               <div class="features mt-4">
@@ -135,72 +153,75 @@
                   <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-box d-flex align-items-center">
                       <i class="bi bi-check"></i>
-                      <h4>Paieškos sistemų optimizavimas (SEO)</h4>
+                      <h4 data-i18n="servicePage.feature1">Paieškos sistemų optimizavimas (SEO)</h4>
                     </div>
                   </div>
                   <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-box d-flex align-items-center">
                       <i class="bi bi-check"></i>
-                      <h4>Socialinių tinklų marketingas</h4>
+                      <h4 data-i18n="servicePage.feature2">Socialinių tinklų marketingas</h4>
                     </div>
                   </div>
                   <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-box d-flex align-items-center">
                       <i class="bi bi-check"></i>
-                      <h4>Turinio marketingo strategija</h4>
+                      <h4 data-i18n="servicePage.feature3">Turinio marketingo strategija</h4>
                     </div>
                   </div>
                   <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-box d-flex align-items-center">
                       <i class="bi bi-check"></i>
-                      <h4>El. pašto kampanijos</h4>
+                      <h4 data-i18n="servicePage.feature4">El. pašto kampanijos</h4>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <p class="mt-4">
-                Ieškote būdų pritraukti daugiau klientų? Mūsų komanda pasiruošusi padėti – nuo SEO iki socialinių tinklų kampanijų. Pradėkite šiandien.
+              <p class="mt-4" data-i18n="servicePage.cta">
+                Ieškote būdų pritraukti daugiau klientų? Mūsų komanda pasiruošusi padėti – nuo SEO iki socialinių tinklų
+                kampanijų. Pradėkite šiandien.
               </p>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="service-info">
-              <h4>Paslaugų informacija</h4>
+              <h4 data-i18n="servicePage.infoTitle">Paslaugų informacija</h4>
               <div class="info-item">
                 <i class="bi bi-clock"></i>
-                <h5>Projekto trukmė</h5>
-                <p>2 mėnesiai</p>
+                <h5 data-i18n="servicePage.durationLabel">Projekto trukmė</h5>
+                <p data-i18n="servicePage.duration">2 mėnesiai</p>
               </div>
               <div class="info-item">
                 <i class="bi bi-person-check"></i>
-                <h5>Projekto Vadovas</h5>
-                <p>Donatas Paulauskas</p>
+                <h5 data-i18n="servicePage.ownerLabel">Projekto Vadovas</h5>
+                <p data-i18n="servicePage.owner">Donatas Paulauskas</p>
               </div>
               <div class="info-item">
                 <i class="bi bi-telephone"></i>
-                <h5>Kontaktinė informacija</h5>
-                <p>+370 6 713 7273</p>
+                <h5 data-i18n="servicePage.contactLabel">Kontaktinė informacija</h5>
+                <p data-i18n="servicePage.contact">+370 6 713 7273</p>
               </div>
             </div>
 
             <div class="related-services mt-5">
-              <h4>Susijusios paslaugos</h4>
+              <h4 data-i18n="servicePage.relatedTitle">Susijusios paslaugos</h4>
               <div class="service-item">
                 <i class="bi bi-bar-chart"></i>
-                <h5><a href="#">Verslo analizė</a></h5>
-                <p>Gaukite įžvalgų apie savo veiklos rezultatus ir priimkite duomenimis pagrįstus sprendimus</p>
+                <h5><a href="#" data-i18n="servicePage.related1Title">Verslo analizė</a></h5>
+                <p data-i18n="servicePage.related1Desc">Gaukite įžvalgų apie savo veiklos rezultatus ir priimkite
+                  duomenimis pagrįstus sprendimus</p>
               </div>
               <div class="service-item">
                 <i class="bi bi-briefcase"></i>
-                <h5><a href="#">Verslo konsultacijos</a></h5>
-                <p>Padedame optimizuoti procesus, didinti efektyvumą ir auginti verslą</p>
+                <h5><a href="#" data-i18n="servicePage.related2Title">Verslo konsultacijos</a></h5>
+                <p data-i18n="servicePage.related2Desc">Padedame optimizuoti procesus, didinti efektyvumą ir auginti
+                  verslą</p>
               </div>
               <div class="service-item">
                 <i class="bi bi-graph-up"></i>
-                <h5><a href="#">Finansinis planavimas</a></h5>
-                <p>Strateginis požiūris į biudžetą, investicijas ir pelningumą</p>
+                <h5><a href="#" data-i18n="servicePage.related3Title">Finansinis planavimas</a></h5>
+                <p data-i18n="servicePage.related3Desc">Strateginis požiūris į biudžetą, investicijas ir pelningumą</p>
               </div>
             </div>
           </div>
@@ -217,17 +238,20 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span>Visos teisės saugomos</span></p>
+        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span data-i18n="footer.rights">Visos
+            teisės saugomos</span></p>
       </div>
       <div class="credits">
-        <a href="https://beproblem.lt/">Kuriame sprendimus, kurie palengvina jūsų kasdienybę</a>
+        <a href="https://beproblem.lt/" data-i18n="footer.tagline">Kuriame sprendimus, kurie palengvina jūsų
+          kasdienybę</a>
       </div>
     </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -243,6 +267,9 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- i18n Script -->
+  <script src="assets/js/i18n.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>

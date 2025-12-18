@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,12 +46,18 @@
     <div class="header-container d-flex flex-column align-items-start">
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="https://beproblem.lt/index.html#hero"><i class="bi bi-house navicon"></i>Pradžia</a></li>
-          <li><a href="https://beproblem.lt/index.html#about"><i class="bi bi-person navicon"></i> Apie mane</a></li>
-          <li><a href="https://beproblem.lt/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> CV</a></li>
-          <li><a href="https://beproblem.lt/index.html#portfolio" class="active"><i class="bi bi-images navicon"></i> Projektai</a></li>
-          <li><a href="https://beproblem.lt/index.html#services"><i class="bi bi-hdd-stack navicon"></i> Paslaugos</a></li>
-          <li><a href="https://beproblem.lt/index.html#contact"><i class="bi bi-envelope navicon"></i> Kontaktai</a></li>
+          <li><a href="https://beproblem.lt/index.html#hero" class="active"><i class="bi bi-house navicon"></i><span
+                data-i18n="nav.home">Pradžia</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#services"><i class="bi bi-hdd-stack navicon"></i> <span
+                data-i18n="nav.services">Paslaugos</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#portfolio"><i class="bi bi-images navicon"></i> <span
+                data-i18n="nav.portfolio">Projektai</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#about"><i class="bi bi-person navicon"></i> <span
+                data-i18n="nav.about">Apie mane</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> <span
+                data-i18n="nav.resume">CV</span></a></li>
+          <li><a href="https://beproblem.lt/index.html#contact"><i class="bi bi-envelope navicon"></i> <span
+                data-i18n="nav.contact">Kontaktai</span></a></li>
         </ul>
       </nav>
 
@@ -58,6 +66,14 @@
         <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://github.com/Donatas333" class="github"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/donatas73a/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <div class="language-switcher text-center mt-3">
+        <button class="lang-btn" data-lang="lt" aria-label="Switch to Lithuanian">LT</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        <span class="separator">|</span>
+        <button class="lang-btn" data-lang="nl" aria-label="Switch to Dutch">NL</button>
       </div>
 
 
@@ -70,11 +86,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Apie Portfolio</h1>
+        <h1 class="mb-2 mb-lg-0" data-i18n="portfolioPages.common.pageTitle">Apie Portfolio</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Pradžia</a></li>
-            <li class="current">Portfolio Apžvalga</li>
+            <li><a href="index.html" data-i18n="nav.home">Pradžia</a></li>
+            <li class="current" data-i18n="portfolioPages.common.breadcrumbCurrent">Portfolio Apžvalga</li>
           </ol>
         </nav>
       </div>
@@ -108,84 +124,98 @@
                   }
                 }
               </script>
-            
+
               <div class="portfolio-swiper-wrapper align-items-center">
-            
+
                 <div class="portfolio-swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-main-1.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-main-1.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
-            
+
                 <div class="portfolio-swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-main-2.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-main-2.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
-            
+
                 <div class="portfolio-swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-main-3.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-main-3.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
-            
+
                 <div class="portfolio-swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-main-4.webp" alt="Portfolio Image" class="img-fluid" loading="lazy">
+                  <img src="assets/img/portfolio/portfolio-main-4.webp" alt="Portfolio Image" class="img-fluid"
+                    loading="lazy">
                 </div>
-            
+
               </div>
-            
+
               <div class="portfolio-swiper-pagination swiper-pagination"></div>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-left" data-aos-delay="200">
-              <h3>Projekto Informacija</h3>
+              <h3 data-i18n="portfolioPages.common.infoTitle">Projekto Informacija</h3>
               <ul>
-                <li><strong>Kategorija</strong>: Auto Caption</li>
-                <li><strong>Klientas</strong>: Private User</li>
-                <li><strong>Projekto data</strong>: 09 Gegužės, 2025</li>
+                <li><strong data-i18n="portfolioPages.common.categoryLabel">Kategorija</strong>: <span
+                    data-i18n="portfolioPages.autoCaptions.category">Auto Caption</span></li>
+                <li><strong data-i18n="portfolioPages.common.clientLabel">Klientas</strong>: <span
+                    data-i18n="portfolioPages.autoCaptions.client">Private User</span></li>
+                <li><strong data-i18n="portfolioPages.common.dateLabel">Projekto data</strong>: <span
+                    data-i18n="portfolioPages.autoCaptions.date">09 Gegužės, 2025</span></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-12">
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Projekto Apžvalga</h2>
-              <p>
-                Automatizuotas sprendimas, kuris palengvina vaizdo turinio publikavimą socialiniuose tinkluose. Įkėlus video, sistema sugeneruoja antraštes, pavadinimą ir tinkamus grotažymes, suplanuoja įkėlimo datą bei laiką, o turinys automatiškai paskelbiamas pasirinktose platformose.
+              <h2 data-i18n="portfolioPages.common.overviewTitle">Projekto Apžvalga</h2>
+              <p data-i18n="portfolioPages.autoCaptions.overview1">
+                Automatizuotas sprendimas, kuris palengvina vaizdo turinio publikavimą socialiniuose tinkluose. Įkėlus
+                video, sistema sugeneruoja antraštes, pavadinimą ir tinkamus grotažymes, suplanuoja įkėlimo datą bei
+                laiką, o turinys automatiškai paskelbiamas pasirinktose platformose.
               </p>
-              <p>
-                Procesas vyksta visiškai automatiškai – DI analizuoja video turinį, parenka tinkamiausius tekstus ir optimizuoja publikaciją, kad pasiektumėte didžiausią auditoriją.
+              <p data-i18n="portfolioPages.autoCaptions.overview2">
+                Procesas vyksta visiškai automatiškai – DI analizuoja video turinį, parenka tinkamiausius tekstus ir
+                optimizuoja publikaciją, kad pasiektumėte didžiausią auditoriją.
               </p>
 
               <div class="features mt-4">
-                <h3>Pagrindinės Funkcijos</h3>
+                <h3 data-i18n="portfolioPages.common.featuresTitle">Pagrindinės Funkcijos</h3>
                 <div class="row gy-3">
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                       <i class="bi bi-badge-cc"></i>
-                      <h4>Automatiniai Caption</h4>
-                      <p>DI sugeneruoja tekstus pagal video turinį, kad būtų aišku ir patrauklu.</p>
+                      <h4 data-i18n="portfolioPages.autoCaptions.feature1Title">Automatiniai Caption</h4>
+                      <p data-i18n="portfolioPages.autoCaptions.feature1Desc">DI sugeneruoja tekstus pagal video turinį,
+                        kad būtų aišku ir patrauklu.</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
                       <i class="bi bi-hash"></i>
-                      <h4>Hashtag Parinkimas</h4>
-                      <p>Sistema automatiškai pritaiko tinkamiausias grotažymes pagal temą ir auditoriją</p>
+                      <h4 data-i18n="portfolioPages.autoCaptions.feature2Title">Hashtag Parinkimas</h4>
+                      <p data-i18n="portfolioPages.autoCaptions.feature2Desc">Sistemos parenka tinkamiausias grotažymes
+                        pagal temą ir auditoriją</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
                       <i class="bi bi-calendar-date"></i>
-                      <h4>Publikacijos Planavimas</h4>
-                      <p>Galimybė nustatyti datą ir laiką, kad įkėlimai vyktų nuosekliai</p>
+                      <h4 data-i18n="portfolioPages.autoCaptions.feature3Title">Publikacijos Planavimas</h4>
+                      <p data-i18n="portfolioPages.autoCaptions.feature3Desc">Galimybė nustatyti datą ir laiką, kad
+                        įkėlimai vyktų nuosekliai</p>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="feature-item" data-aos="fade-up" data-aos-delay="700">
                       <i class="bi bi-upload"></i>
-                      <h4>Automatinis Įkėlimas į Soc. Tinklus</h4>
-                      <p>Video su visais priedais automatiškai paskelbiamas pasirinktose platformose</p>
+                      <h4 data-i18n="portfolioPages.autoCaptions.feature4Title">Automatinis Įkėlimas į Soc. Tinklus</h4>
+                      <p data-i18n="portfolioPages.autoCaptions.feature4Desc">Video su visais priedais automatiškai
+                        paskelbiamas pasirinktose platformose</p>
                     </div>
                   </div>
                 </div>
@@ -205,17 +235,20 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span>Visos teisės saugomos</span></p>
+        <p>© <span>2025</span> <strong class="px-1 sitename">BeProblem</strong> <span data-i18n="footer.rights">Visos
+            teisės saugomos</span></p>
       </div>
       <div class="credits">
-        <a href="https://beproblem.lt/">Kuriame sprendimus, kurie palengvina jūsų kasdienybę</a>
+        <a href="https://beproblem.lt/" data-i18n="footer.tagline">Kuriame sprendimus, kurie palengvina jūsų
+          kasdienybę</a>
       </div>
     </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -231,6 +264,9 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- i18n Script -->
+  <script src="assets/js/i18n.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
